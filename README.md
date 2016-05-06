@@ -25,6 +25,12 @@ Favor sempre usar: **class-X-resolved-githubuser-nome-completo-com-hifens.md**
 
     class-01-resolved-suissa-Jean-Carlo-Nascimento.md
 
+E no início da resposta do Markdown use:
+
+Nome: (seu nome)
+Github: (link para eu perfil)
+Data: (timestamp da data entregue)
+
 **NENHUM ARQUIVO FORA DESSE PADRÃO SERÁ ACEITO!!!**
 
 # Prazo
