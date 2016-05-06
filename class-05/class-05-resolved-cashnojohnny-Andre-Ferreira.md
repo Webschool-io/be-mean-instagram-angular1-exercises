@@ -1,6 +1,6 @@
-## Exercício 1
+# Exercício 1
 
-# data-ng-click
+## data-ng-click
 ```html
 <thead>
   <tr>
@@ -10,7 +10,7 @@
 </thead>
 ```
 
-# controller
+## controller
 ```html
 <script>
   angular.module("BeMEAN", [])
@@ -43,7 +43,7 @@
 </script>
 ```
 
-## Exercício 2
+# Exercício 2
 
 ```html
 <!doctype html>
