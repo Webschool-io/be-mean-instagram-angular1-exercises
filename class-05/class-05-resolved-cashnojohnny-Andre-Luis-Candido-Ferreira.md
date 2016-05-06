@@ -1,3 +1,7 @@
+**Nome:** André Luis Candido Ferreira
+**Github:** https://github.com/cashnojohnny
+**date:** 1462556251809
+
 # Exercício 1
 
 ## data-ng-click
