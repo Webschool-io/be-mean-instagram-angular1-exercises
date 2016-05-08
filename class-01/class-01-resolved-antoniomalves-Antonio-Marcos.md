@@ -5,11 +5,11 @@
 
 ## 1 - Explique  qual a definição de MVC, MVVM e MVP.
 
-MVC - É um acrônimo de Model-View-Controller.
+`MVC` - É um acrônimo de Model-View-Controller.
 é um padrão de arquitetura de software(design pattern), usado para separar a aplicação em 3 camadas.
 A camada de interação do usuário(view), a camada de manipulação dos dados(model) e a camada de controle(controller).
 
-MVVM - É um acrônimo de Model-View-ViewModel. É um padrão de arquitetura que foi criado
+`MVVM` - É um acrônimo de Model-View-ViewModel. É um padrão de arquitetura que foi criado
 por John Gossman, um dos arquitetosda WPF e Silverlight na Microsoft. Esse padrão se assemelha em muito com o padrão MVP e é especifico
 para a arquitetura do WPF e Silverlight, também é uma especialização do padrão PM(Presentation-Model), introduzido por Martin Fowler em 2004.
 A comuniação entre as camadas view-model e view é feita por um mecanismo denominado binding
@@ -19,7 +19,7 @@ O ViewModel - contém a lógica de interface do usuário, os comandos, os evento
 implementa propriedades e comandos para que a View possa preencher seus controles, e a notifica
 caso haja alteração de estado, seja através de eventos ou de notificação de alteração.
 
-MVP - É o acrônimo de Model-View-Presenter.
+`MVP` - É o acrônimo de Model-View-Presenter.
 Ele é considerado uma derivação do conceito MVC, o modelo é a camada que trata das regras de negócio, a View também segue o mesmo
 papel que possui no MVC, de lidar com a interface do usuário, e o Presenter pode ser visto como a camada Controller do MVC, tendo a responsabilidade
 de ligar o Model e a View.
@@ -33,7 +33,7 @@ Presenter - atua sobre o Model e sobre o View fazendo a comunicação entre eles
 ## 2 - Crie uma aplicação com um nome e um form onde os dados colocados neles sejam mostrados logo abaixo, formatados.
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
@@ -57,17 +57,16 @@ Presenter - atua sobre o Model e sobre o View fazendo a comunicação entre eles
           <input type="text" name="endereco" class="form-control" placeholder="Endereço" data-ng-model="endereco"></input>
    </div>
 
-   <script type="text/javascript">
-            angular.module('BeMEAN', [])
-   </script>
 </form>
 <br />
-<fieldset >
- <legend> Dados do Cliente</legend>
-    Nome: {{nome}}<br />
-    CPF:     {{cpf}}<br />
-    Endereço: {{endereco}}<br />
-</fieldset>
-
+  <fieldset >
+   <legend> Dados do Cliente</legend>
+      Nome: {{nome}}<br />
+      CPF:     {{cpf}}<br />
+      Endereço: {{endereco}}<br />
+  </fieldset>
+  <script type="text/javascript">
+              angular.module('BeMEAN', [])
+  </script>
 </body>
 </html>
