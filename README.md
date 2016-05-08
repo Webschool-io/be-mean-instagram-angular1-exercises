@@ -15,8 +15,9 @@ Para entrar no grupo oficial do Be mean no Telegram basta seguir o link [https:/
 Caso você faça um `pull` antes de fazer o seu `Pull Request` por favor **COMITE APENAS SEU ARQUIVO, NÃO FAÇA `git add .`!!**
 
 **Faça:**
-- `git add nome_do_meu_arquivo.md`
-- `git commit -m 'SEU NOME - NodeJS - Exercício XX resolvido'`
+- **Crie uma pasta dentro de class-X com o seu githuser e dentro coloque sua resposta em Markdown e seus arquivos utilizados**
+- `git add nome_da_pasta`
+- `git commit -m 'SEU NOME - Angular 1 - Exercício XX resolvido'`
 - `git push origin master`
 
 # Padrão do arquivo
