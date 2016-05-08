@@ -1,9 +1,10 @@
+# AngularJS - Aula 01 - Exercício
+**Nome: Antonio Marcos Alves de Lima**
+**Github : https://github.com/antoniomalves**
+**Data: 1462735865 (Timesamp Linux - BRT)**
 
-Nome: Antonio Marcos Alves de Lima
-Github : https://github.com/antoniomalves
-Data: 1462735865 (Timesamp Linux - BRT)
+## 1 - Explique  qual a definição de MVC, MVVM e MVP.
 
-## Explique  qual a definição de MVC, MVVM e MVP.
 MVC - É um acrônimo de Model-View-Controller.
 é um padrão de arquitetura de software(design pattern), usado para separar a aplicação em 3 camadas.
 A camada de interação do usuário(view), a camada de manipulação dos dados(model) e a camada de controle(controller).
@@ -30,6 +31,7 @@ Presenter - atua sobre o Model e sobre o View fazendo a comunicação entre eles
 
 
 ## 2 - Crie uma aplicação com um nome e um form onde os dados colocados neles sejam mostrados logo abaixo, formatados.
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
