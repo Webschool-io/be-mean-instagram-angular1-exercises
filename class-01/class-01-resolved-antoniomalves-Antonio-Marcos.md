@@ -1,7 +1,11 @@
 # AngularJS - Aula 01 - Exercício
+
 **Nome: Antonio Marcos Alves de Lima**
+
 **Github : https://github.com/antoniomalves**
+
 **Data: 1462735865 (Timesamp Linux - BRT)**
+
 
 ## 1 - Explique  qual a definição de MVC, MVVM e MVP.
 
@@ -32,7 +36,7 @@ Presenter - atua sobre o Model e sobre o View fazendo a comunicação entre eles
 
 ## 2 - Crie uma aplicação com um nome e um form onde os dados colocados neles sejam mostrados logo abaixo, formatados.
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -41,32 +45,31 @@ Presenter - atua sobre o Model e sobre o View fazendo a comunicação entre eles
     <title>Aula 1 - Angular BeMEAN</title>
 </head>
 <body data-ng-app="BeMEAN">
-   <form>
-   <div class="form-group">
-          <label for="nome"> Seu nome:</label>
-          <input type="text" name="nome" class="form-control"  placeholder="Nome" data-ng-model="nome"></input>
-   </div>
-
-   <div class="form-group">
-          <label for="cpf"> CPF:   </label>
-          <input type="text" name="cpf" class="form-control" placeholder="CPF" data-ng-model="cpf"></input>
-   </div>
-
-   <div class="form-group">
-          <label for="endereco"> Endereço: </label>
-          <input type="text" name="endereco" class="form-control" placeholder="Endereço" data-ng-model="endereco"></input>
-   </div>
-
-</form>
-<br />
-  <fieldset >
-   <legend> Dados do Cliente</legend>
-      Nome: {{nome}}<br />
-      CPF:     {{cpf}}<br />
-      Endereço: {{endereco}}<br />
-  </fieldset>
-  <script type="text/javascript">
-              angular.module('BeMEAN', [])
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="nome"> Seu nome:</label>
+                <input type="text" name="nome" class="form-control"  placeholder="Nome" data-ng-model="nome"></input>
+            </div>
+            <div class="form-group">
+                <label for="cpf"> CPF:   </label>
+                <input type="text" name="cpf" class="form-control" placeholder="CPF" data-ng-model="cpf"></input>
+            </div>
+            <div class="form-group">
+                <label for="endereco"> Endereço: </label>
+                <input type="text" name="endereco" class="form-control" placeholder="Endereço" data-ng-model="endereco"></input>
+            </div>
+        </form>
+        <br />
+        <fieldset >
+              <legend> Dados do Cliente</legend>
+              Nome: {{nome}}<br />
+              CPF:     {{cpf}}<br />
+              Endereço: {{endereco}}<br />
+        </fieldset>
+    </div>
+  <script>
+          angular.module('BeMEAN', [])
   </script>
 </body>
 </html>
