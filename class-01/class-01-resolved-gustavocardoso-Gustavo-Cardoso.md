@@ -22,6 +22,7 @@
 
 ## 2- Crie uma aplicação com um nome e um form onde os dados colocados neles sejam mostrados logo abaixo, formatados.
 
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,5 +94,5 @@
     angular.module('address-book', []);
   </script>
 </body>
-
 </html>
+```
