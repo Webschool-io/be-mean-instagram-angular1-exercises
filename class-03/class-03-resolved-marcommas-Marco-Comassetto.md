@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="pt-br" data-ng-app="BeMEAN">
 <head>
