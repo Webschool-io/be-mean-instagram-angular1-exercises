@@ -1,11 +1,7 @@
-# AngularJS - Aula 01 - Exercício
 
 **Nome: Antonio Marcos Alves de Lima**
 
-**Github : https://github.com/antoniomalves**
-
-**Data: 1462735865 (Timesamp Linux - BRT)**
-
+**Github** : [antoniomalves] (https://github.com/antoniomalves)
 
 ## 1 - Explique  qual a definição de MVC, MVVM e MVP.
 
