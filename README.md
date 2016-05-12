@@ -4,7 +4,7 @@ Caso você seja APOIADOR, com $, poderá participar do nosso sorteio MENSAL de 1
 
 O livro desse mês é o [Introdução ao AngularJS](http://www.novatec.com.br/livros/introangularjs/)
 
-Para articipar se cadastre em: [Sorteio LIVRO - Introdução ao AngularJS da Novactec - 15 de MAIO](http://goo.gl/forms/S0yzy7JzNA)
+Para participar se cadastre em: [Sorteio LIVRO - Introdução ao AngularJS da Novactec - 15 de MAIO](http://goo.gl/forms/S0yzy7JzNA)
 
 # O Envio
 
