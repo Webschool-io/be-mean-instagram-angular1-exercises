@@ -49,7 +49,7 @@
 				<tr>
 					<td>{{ nome | lowercase }}</td>
 					<td>{{ sobrenome | uppercase }}</td>
-					<td>{{ cpf }}</td>
+					<td>{{ cpf | limitTo:11 }}</td>
 					<td>{{ nascimento | date:'dd-MM-yyyy' }}</td>
 					<td>{{ valor | currency }}</td>
 				</tr>
