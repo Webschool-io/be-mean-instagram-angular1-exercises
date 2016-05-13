@@ -1,6 +1,6 @@
 Nome: Marco Comassetto
 
-Github: [marcommas](https://github.com/marcommas/){:target="_blank"}
+Github: [marcommas](https://github.com/marcommas/)
 
 Data: 12/05/2016
 ```html
