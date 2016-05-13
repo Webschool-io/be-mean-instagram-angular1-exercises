@@ -1,3 +1,8 @@
+Nome: Marco Comassetto
+
+Github: [marcommas](https://github.com/marcommas/){:target="_blank"}
+
+Data: 12/05/2016
 ```html
 <!doctype html>
 <html lang="pt-br" data-ng-app="BeMEAN">
