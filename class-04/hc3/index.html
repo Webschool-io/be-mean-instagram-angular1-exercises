@@ -11,7 +11,7 @@
 <body>
 	<div class="container" data-ng-controller="UserController as User">
 		<h1>{{User.titulo}}</h1>
-		<span data-ng-init="predicate= 'nivel_acesso'; reverse= false;"></span>
+		<span data-ng-init="predicateUser= 'nivel_acesso'; reverse= false;"></span>
 		<label>Busca:<input data-ng-model="searchUser"></label>
 		<table>
 			<thead>
@@ -21,7 +21,7 @@
 			</thead>
 
 			<tbody>
-				<tr data-ng-repeat="user in User.users | orderBy:'predicate' | filter:searchUser">
+				<tr data-ng-repeat="user in User.users | orderBy:predicateUser | filter:searchUser">
 					<td data-ng-repeat="(key,value) in user">{{ value }}</td>
 				</tr>
 			</tbody>
@@ -29,7 +29,7 @@
 	</div>
 	<div class="container" data-ng-controller="CursoController as Curso">
 		<h1>{{Curso.titulo}}</h1>
-		<span data-ng-init="predicate= 'qnt_aulas'"></span>
+		<span data-ng-init="predicateCurso= 'qnt_aulas'"></span>
 		<label>Busca:<input data-ng-model="searchCurso"></label>
 		<table>
 			<thead>
@@ -39,7 +39,7 @@
 			</thead>
 				
 			<tbody>
-				<tr data-ng-repeat="curso in Curso.cursos | orderBy:'predicate' | filter:searchCurso">
+				<tr data-ng-repeat="curso in Curso.cursos | orderBy:predicateCurso | filter:searchCurso">
 					<td data-ng-repeat="(key,value) in curso">{{ value }}</td>
 				</tr>
 			</tbody>
@@ -47,7 +47,7 @@
 	</div>
 	<div class="container" data-ng-controller="ProfessorController as Professor">
 		<h1>{{Professor.titulo}}</h1>
-		<span data-ng-init="predicate= 'idade'"></span>
+		<span data-ng-init="predicateProf= 'idade'"></span>
 		<label>Busca:<input data-ng-model="searchProfessor"></label>
 		<table>
 			<thead>
@@ -57,7 +57,7 @@
 			</thead>
 				
 			<tbody>
-				<tr data-ng-repeat="professor in Professor.professores | orderBy:'predicate' | filter:searchProfessor">
+				<tr data-ng-repeat="professor in Professor.professores | orderBy:predicateProf | filter:searchProfessor">
 					<td data-ng-repeat="(key,value) in professor">{{ value }}</td>
 				</tr>
 			</tbody>

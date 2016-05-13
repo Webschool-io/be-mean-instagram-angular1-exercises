@@ -13,17 +13,17 @@
 ## Utilizar esse valor adicional no ng-init para cada ng-repeat da view
 
 ```html
-<span data-ng-init="predicate= 'nivel_acesso'; reverse= false;"></span>
-<span data-ng-init="predicate= 'qnt_aulas'"></span>
-<span data-ng-init="predicate= 'idade'"></span>
+<span data-ng-init="predicateUser= 'nivel_acesso'; reverse= false;"></span>
+<span data-ng-init="predicateCurso= 'qnt_aulas'"></span>
+<span data-ng-init="predicateProf= 'idade'"></span>
 ```
 
 ## Criar um campo de filtro para cada ng-repeat,
 ```html
 <label>Busca:<input data-ng-model="searchUser"></label>
-<tr data-ng-repeat="user in User.users | orderBy:'predicate' | filter:searchUser">
+<tr data-ng-repeat="user in User.users | orderBy:'predicateUser' | filter:searchUser">
 <label>Busca:<input data-ng-model="searchCurso"></label>
-<tr data-ng-repeat="curso in Curso.cursos | orderBy:'predicate' | filter:searchCurso">
+<tr data-ng-repeat="curso in Curso.cursos | orderBy:'predicateCurso' | filter:searchCurso">
 <label>Busca:<input data-ng-model="searchProfessor"></label>
-<tr data-ng-repeat="professor in Professor.professores | orderBy:'predicate' | filter:searchProfessor">
+<tr data-ng-repeat="professor in Professor.professores | orderBy:'predicateProf' | filter:searchProfessor">
 ```
