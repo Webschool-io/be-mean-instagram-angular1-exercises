@@ -1,24 +1,24 @@
-# [Slack da Webschool](https://webschool-slack.herokuapp.com/)
-- Coloque um email para login( hotmail não funciona )
-- Após isso, clique em Webschool para entrar no link do slack
-- Coloque o email que você digitou antes e crie uma senha
-- Entre no channel `be-mean-instagram`
+# Sorteio de LIVRO
 
+Caso você seja APOIADOR, com $, poderá participar do nosso sorteio MENSAL de 1 livro da [Novatec](http://novatec.com.br).
 
-# [Grupo do Telegram](https://telegram.me/joinchat/BJ_gtz49o2OSzTU90SKp-A)
+O livro desse mês é o [Introdução ao AngularJS](http://www.novatec.com.br/livros/introangularjs/)
 
-Para entrar no grupo oficial do Be mean no Telegram basta seguir o link [https://telegram.me/joinchat/BJ_gtz49o2OSzTU90SKp-A](https://telegram.me/joinchat/BJ_gtz49o2OSzTU90SKp-A), lembrando que só é permitido postagens e discussões sobre dúvidas e/ou assuntos pertinentes ao curso, aquele que não respeitar essas regras será banido.
-
+Para participar se cadastre em: [Sorteio LIVRO - Introdução ao AngularJS da Novactec - 15 de MAIO](http://goo.gl/forms/S0yzy7JzNA)
 
 # O Envio
 
-Caso você faça um `pull` antes de fazer o seu `Pull Request` por favor **COMITE APENAS SEU ARQUIVO, NÃO FAÇA `git add .`!!**
+Caso você faça um `pull` antes de fazer o seu `Pull Request` por favor **COMITE APENAS SUA PASTA, NÃO FAÇA `git add .`!!**
 
 **Faça:**
 - **Crie uma pasta dentro de class-X com o seu githuser e dentro coloque sua resposta em Markdown e seus arquivos utilizados**
 - `git add nome_da_pasta`
 - `git commit -m 'SEU NOME - Angular 1 - Exercício XX resolvido'`
 - `git push origin master`
+
+## Exemplo
+
+Deve ser assim: [https://github.com/Webschool-io/be-mean-instagram-angular1-exercises/tree/master/class-01/gkal19](https://github.com/Webschool-io/be-mean-instagram-angular1-exercises/tree/master/class-01/gkal19)
 
 # Padrão do arquivo
 
