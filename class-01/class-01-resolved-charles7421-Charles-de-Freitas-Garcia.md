@@ -1,3 +1,8 @@
+# AngularJS - Aula 01 - Exercício  
+**user:** [charles7421] (https://github.com/charles7421)  
+**autor:** Charles de Freitas Garcia
+
+
 ## 1 - Explique qual é a definição de MVC, MVVM e MVP
 
  ### MVC
