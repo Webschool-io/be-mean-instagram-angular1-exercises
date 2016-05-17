@@ -1,0 +1,111 @@
+<html lang="pt-br" data-ng-app="bemean">
+<head>
+    <meta charset="UTF-8">
+    <title>Controllers</title>
+	<script src="controller.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+</head>
+<body>
+    <div class="container" data-ng-controller="User as User">
+        <h1>{{User.title}}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome:</th>
+                    <th>Email:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="user in User.users">
+                    <td>{{ user.name | uppercase }}</td>
+                    <td>{{ user.email | lowercase }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container" data-ng-controller="Curso as Curso">
+        <h1>{{Curso.title}}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Professor</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr data-ng-repeat="curso in Curso.cursos">
+                    <td>{{ curso.description | uppercase }}</td>
+                    <td>{{ curso.professor | lowercase }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container" data-ng-controller="Professor as Professor">
+        <h1>{{Professor.title}}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome:</th>
+                    <th>Idade:</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr data-ng-repeat="professor in Professor.professores">
+                    <td>{{ professor.name | uppercase }}</td>
+                    <td>{{ professor.age | calcular}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+<script>
+angular.module('bemean', [])
+            .filter('calcular',function() {
+                return function(text) {
+                    if(text < 18) { return 'Piah não é maior de idade.'}
+                    if(text >= 18) { return 'É maior de idade.'}
+                }
+            })
+			
+                .controller('User',User)
+                .controller('Curso',Curso)
+                .controller('Professor',Professor);
+
+                function User() {
+                    var vm = this;
+                    vm.title = "Usuários";
+                    vm.users = [
+                        {name:"Gabriel Kalani",email:"gabrielsilva1956@gmail.com"}
+                        ,{name:"Jean Carlo Nascimento",email:"jnascimento@gmail.com"}
+                        ,{name:"Douglas Hennrich",email:"douglas@hennrich.com"}
+                        ,{name:"Pica-Pau",email:"pica@pau.com ( ͡° ͜ʖ ͡°)"}
+                    ]
+                }
+
+                function Curso() {
+                    var vm = this;
+                    vm.title = "Cursos";
+                    vm.cursos = [
+                        {description:"Javascript",professor:"Jean Carlo Nascimento"}
+                        ,{description:"PHP",professor:"Vagner Kaefer"}
+                        ,{description:"Mobile",professor:"Anderson Faro"}
+                        ,{description:"Química",professor:"Franciele Pereira"}
+                    ]
+                }
+
+                function Professor() {
+                    var vm = this;
+                    vm.title = "Professores";
+                    vm.professores = [
+                        {name:"Jean Carlo Nascimento",age:30}
+                        ,{name:"Anderson Faro",age:35}
+                        ,{name:"Franciele Pereira",age:35}
+                        ,{name:"Vagner Kaefer",age:40}
+                    ]
+                }
+</script>
+</body>
+</html>
