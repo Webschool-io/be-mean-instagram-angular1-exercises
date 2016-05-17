@@ -1,4 +1,4 @@
-# AngularJS 1.5.x - Aula 06 - Exercício  
+# AngularJS 1.5.x - Aula 07 - Exercício  
 **user:** [hc3](https://github.com/hc3)  
 **autor:** Eliel das Virgens
 
