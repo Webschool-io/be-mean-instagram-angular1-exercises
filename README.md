@@ -20,9 +20,8 @@ Caso você faça um `pull` antes de fazer o seu `Pull Request` por favor **COMIT
 - `git commit -m 'SEU NOME - Angular 1 - Exercício XX resolvido'`
 - `git push origin master`
 
-## Exemplo
+## Caso você envie fora dos padrões MÍNIMOS seu PR será negado! Não esqueça da DATA em TIMESTAMP!!!!
 
-Deve ser assim: [https://github.com/Webschool-io/be-mean-instagram-angular1-exercises/tree/master/class-01/gkal19](https://github.com/Webschool-io/be-mean-instagram-angular1-exercises/tree/master/class-01/gkal19)
 
 # Padrão do arquivo
 
