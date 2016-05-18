@@ -2,6 +2,8 @@
 **user:** [gkal19](https://github.com/gkal19)  
 **autor:** Gabriel Kalani
 
+**Data:** 1463600124
+
 ## 1 - Crie 1 exemplo para pelo menos 5 filtros padrões do Angular.
 
 [Arquivo](https://github.com/webschool-io/be-mean-instagram-angular1-exercises/blob/master/class-02/gkal19/index1.html) `index1.html`
