@@ -3,7 +3,7 @@
 **autor:** Eliel das Virgens
 
 
-## 
+## Criar função de delete utilizando splice em vez de filter
 ```html
 vm.removeWithSplice = removeWithSplice;
 function removeWithSplice(users) {
