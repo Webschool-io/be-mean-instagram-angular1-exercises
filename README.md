@@ -20,9 +20,6 @@ Caso você faça um `pull` antes de fazer o seu `Pull Request` por favor **COMIT
 - `git commit -m 'SEU NOME - Angular 1 - Exercício XX resolvido'`
 - `git push origin master`
 
-## Caso você envie fora dos padrões MÍNIMOS seu PR será negado! Não esqueça da DATA em TIMESTAMP!!!!
-
-
 # Padrão do arquivo
 
 Favor sempre usar: **class-X-resolved-githubuser-nome-completo-com-hifens.md**
@@ -38,6 +35,9 @@ Github: (link para eu perfil)
 Data: (timestamp da data entregue)
 
 **NENHUM ARQUIVO FORA DESSE PADRÃO SERÁ ACEITO!!!**
+
+## Caso você envie fora dos padrões MÍNIMOS seu PR será negado! Não esqueça da DATA em TIMESTAMP!!!!
+
 
 # Prazo
 
