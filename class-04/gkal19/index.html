@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-ng-app="BeMEAN">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <title>BeMEAN</title>
+</head>
+<body class="container">
+  <!-- UserController -->
+  <div class="container" data-ng-controller="UserController as User">
+  <h2>{{ User.titulo }}</h2>
+  <label>Busca: <input placeholder="Faça uma busca de um usuário" ng-model="searchUser"></label>
+  <span data-ng-init="predicate = 'name'; reverse=false "></span>
+  <table>
+    <thead>
+        <tr>
+        <th data-ng-repeat="(key, value) in User.users[0]">{{ key }}</th>
+      </tr>
+      </thead>
+    <tbody>
+        <tr data-ng-repeat="user in User.users | orderBy:predicate:reverse | filter:searchUser">
+        <td data-ng-repeat="(key, value) in user">{{ value }}</td>
+      </tr>
+      </tbody>
+    </thead> 
+  </table>
+
+  <!-- CursoController -->
+   <div class="container" data-ng-controller="CursoController as Curso">
+  <h2>{{ Curso.titulo }}</h2>
+  <label>Busca: <input placeholder="Faça uma busca de um curso" ng-model="searchCurso"></label>
+  <span data-ng-init="predicate = 'nota'; reverse=false "></span>
+  <table>
+    <thead>
+        <tr>
+        <th data-ng-repeat="(key, value) in Curso.cursos[0]">{{ key }}</th>
+      </tr>
+      </thead>
+    <tbody>
+        <tr data-ng-repeat="curso in Curso.cursos | orderBy:predicate:reverse | filter:searchCurso">
+        <td data-ng-repeat="(key, value) in curso">{{ value }}</td>
+      </tr>
+      </tbody>
+    </thead> 
+  </table>
+
+  <!-- ProfessorController -->
+  <div class="container" data-ng-controller="ProfessorController as Professor">
+  <h2>{{ Professor.titulo }}</h2>
+  <label>Busca: <input placeholder="Faça uma busca de um professor" ng-model="searchProfessor"></label>
+  <span data-ng-init="predicate = 'nome'; reverse=false "></span>
+  <table>
+    <thead>
+        <tr>
+        <th data-ng-repeat="(key, value) in Professor.professores[0]">{{ key }}</th>
+      </tr>
+      </thead>
+    <tbody>
+        <tr data-ng-repeat="professor in Professor.professores | orderBy:predicate:reverse | filter:searchProfessor">
+        <td data-ng-repeat="(key, value) in professor">{{ value }}</td>
+      </tr>
+      </tbody>
+    </thead> 
+  </table>
+
+  <script src="angular.min.js"></script>
+  <script>
+    angular.module('BeMEAN', [])
+      .controller('UserController', UserController)
+      .controller('CursoController', CursoController)
+      .controller('ProfessorController', ProfessorController);
+
+    function UserController() {
+      var vm = this;
+      vm.titulo = "Webschool - Usuários";
+      vm.users = [
+        {Nome: 'Gabriel Kalani', Email: 'gabrielsilva1956@gmail.com', Username:'gkal19'}
+      , {Nome: 'Jean Carlo Nascimento', Email: 'jnascimento@gmail.com', Username:'Suissa'}
+      , {Nome: 'Pica-pau', Email: 'pica@pau.com (lenny face)', Username:'na1sei'}
+      ];
+    }
+
+    function CursoController() {
+      var vm = this;
+      vm.titulo = "Webschool - Cursos";
+      vm.cursos = [
+        {Nome: 'JS', Instrutor: 'Jean Carlo Nascimento', Nota:10}
+      , {Nome: 'PHP', Instrutor: 'Vagner Kaefer', Nota:"9,5"}
+      , {Nome: 'Mobile', Instrutor: 'Anderson Faro', Nota:8}
+      ];
+    }
+
+    function ProfessorController() {
+      var vm = this;
+      vm.titulo = "Webschool - Professores";
+      vm.professores = [
+        {Nome: 'Jean Carlo Nascimento', Idade:30, Palestrante: 'Sim'}
+      , {Nome: 'Vagner Kaefer', Idade:30, Palestrante:'Não definido'}
+      , {Nome: 'Anderson Faro', Idade:30, Palestrante:'Não definido'}
+      ];
+    }
+  </script>
+</body>
+</html>
