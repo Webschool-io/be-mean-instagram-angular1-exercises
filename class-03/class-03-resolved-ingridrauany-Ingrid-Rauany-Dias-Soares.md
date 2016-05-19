@@ -2,7 +2,7 @@
 
 Nome: Ingrid Rauany  
 Github: [ingridrauany](https://github.com/ingridrauany)  
-Data: 1463663947158
+Data: 1463697306488
 
 ## 1- Criar 1 Controller de Professores, igual aos outros seguindo nosso último padrão.
 
