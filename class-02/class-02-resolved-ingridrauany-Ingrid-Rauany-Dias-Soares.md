@@ -2,7 +2,7 @@
 
 Nome: Ingrid Rauany  
 Github: [ingridrauany](https://github.com/ingridrauany)  
-Data: 1463612056863
+Data: 1463618696750
 
 ## 1- Crie 1 exemplo para pelo menos 5 filtros padrões do Angular.
 
@@ -56,7 +56,7 @@ Data: 1463612056863
             {{ 1288323623006 | date: 'mediumDate' }}
             <h2>Notas (arredondas):</h2>
             {{ nome1 | limitTo: 5 | uppercase }} - {{ nota1 | number:0 }}</br>
-            {{ nome2 | limitTo: 10 | uppercase }} - {{ nota2 | number:0 }} 
+            {{ nome2 | limitTo: 5 | uppercase }} - {{ nota2 | number:0 }} 
         </div>
         <div class="dados">      
             <h2>Compra Produtos</h1>
@@ -102,7 +102,7 @@ Data: 1463612056863
                 return function(text) {
                     if(text >= 18) return 'e você é maior de idade';
                     if(text < 18) return 'e você é menor de idade';
-                    else return 'Insira uma idade inválida';
+                    else return 'Insira uma idade válida';
                 };
             });
         </script>
