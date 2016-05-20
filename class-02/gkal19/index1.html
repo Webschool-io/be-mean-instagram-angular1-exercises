@@ -1,0 +1,63 @@
+<html lang="pt-br" data-ng-app="bemean">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <form>
+            <label for="nome">Nome:
+                <input type="text" data-ng-model="nome">
+            </label>
+            <label for="nome">Sobrenome:
+                <input type="text" data-ng-model="sobrenome">
+            </label>
+			<label for="nome">Nascimento:
+                <input type="text" data-ng-model="nascimento">
+            </label>
+            <label for="city">Cidade:
+                <input type="text" data-ng-model="city">
+            </label>
+            <label for="state">Estado:
+                <input type="text" data-ng-model="state">
+            </label>
+            <label for="doar">Doar:
+                <input type="text" data-ng-model="doar">
+            </label>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Nascimento</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Doar valor:</th>
+                </tr>
+            </thead>
+            <!-- `limitTo é considerado apenas um filtro -->
+                <tr>
+                    <td>{{ nome | lowercase }}</td>
+                    <td>{{ sobrenome | uppercase }}</td>
+					<td>{{ nascimento | date:'dd-MM-yyyy' }}</td>
+                    <td>{{ city | limitTo:11 }}</td>
+                    <td>{{ state | limitTo:2 }}</td>
+                    <td>{{ doar | number}}</td>
+                </tr>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+    <script>
+        angular.module('bemean', []);
+    </script>
+</body>
+
+</html>

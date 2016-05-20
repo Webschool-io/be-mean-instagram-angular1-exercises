@@ -1,3 +1,7 @@
+# [Grupo do Telegram](https://telegram.me/joinchat/BJ_gtz49o2OSzTU90SKp-A)
+
+Para entrar no grupo oficial do Be mean no Telegram basta seguir o link [https://telegram.me/joinchat/BJ_gtz49o2OSzTU90SKp-A](https://telegram.me/joinchat/BJ_gtz49o2OSzTU90SKp-A), lembrando que só é permitido postagens e discussões sobre dúvidas e/ou assuntos pertinentes ao curso, aquele que não respeitar essas regras será banido.
+
 # Sorteio de LIVRO
 
 Caso você seja APOIADOR, com $, poderá participar do nosso sorteio MENSAL de 1 livro da [Novatec](http://novatec.com.br).
@@ -16,10 +20,6 @@ Caso você faça um `pull` antes de fazer o seu `Pull Request` por favor **COMIT
 - `git commit -m 'SEU NOME - Angular 1 - Exercício XX resolvido'`
 - `git push origin master`
 
-## Exemplo
-
-Deve ser assim: [https://github.com/Webschool-io/be-mean-instagram-angular1-exercises/tree/master/class-01/gkal19](https://github.com/Webschool-io/be-mean-instagram-angular1-exercises/tree/master/class-01/gkal19)
-
 # Padrão do arquivo
 
 Favor sempre usar: **class-X-resolved-githubuser-nome-completo-com-hifens.md**
@@ -35,6 +35,9 @@ Github: (link para eu perfil)
 Data: (timestamp da data entregue)
 
 **NENHUM ARQUIVO FORA DESSE PADRÃO SERÁ ACEITO!!!**
+
+## Caso você envie fora dos padrões MÍNIMOS seu PR será negado! Não esqueça da DATA em TIMESTAMP!!!!
+
 
 # Prazo
 

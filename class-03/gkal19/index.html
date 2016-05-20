@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-ng-app="BeMEAN">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <title>BeMEAN</title>
+</head>
+<body>
+  <div class="container" data-ng-controller="UserController as User">
+  <h2>{{ User.titulo }}</h2>
+  <ul>
+    <li data-ng-repeat="user in User.users">
+      {{ user.name | lowercase }} - {{ user.email | uppercase }}
+    </li>
+  </ul>
+</div>
+  <div class="container" data-ng-controller="CursoController as Curso">
+    <h2>{{ Curso.titulo }}</h2>
+    <ul>
+      <li data-ng-repeat="curso in Curso.cursos">
+        {{ curso.name | uppercase }} - {{ curso.teacher | lowercase }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="container" data-ng-controller="ProfessorController as Professor">
+    <h2>{{ Professor.titulo }}</h2>
+    <ul>
+      <li data-ng-repeat="professor in Professor.professores">
+        {{ professor.name | uppercase }} - {{ professor.age | number }}
+      </li>
+    </ul>
+  </div>
+
+  <script src="angular.min.js"></script>
+  <script>
+    angular.module('BeMEAN', [])
+      .controller('UserController', UserController)
+      .controller('CursoController', CursoController)
+      .controller('ProfessorController', ProfessorController);
+
+    function UserController() {
+      var vm = this;
+      vm.titulo = "Webschool - Usuários";
+      vm.users = [
+        {name: 'Gabriel', email: 'gabrielsilva1956@gmail.com'}
+      , {name: 'Suissa', email: 'jnascimento@gmail.com'}
+      , {name: 'Pica-pau', email: 'pica@pau.com (lenny face)'}
+      ];
+    }
+
+    function CursoController() {
+      var vm = this;
+      vm.titulo = "Webschool - Cursos";
+      vm.cursos = [
+        {name: 'JS', teacher: 'Jean Carlo Nascimento'}
+      , {name: 'PHP', teacher: 'Vagner Kaefer'}
+      , {name: 'Mobile', teacher: 'Anderson Faro'}
+      ];
+    }
+
+    function ProfessorController() {
+      var vm = this;
+      vm.titulo = "Webschool - Professores";
+      vm.professores = [
+        {name: 'Jean Carlo Nascimento', age:30}
+      , {name: 'Vagner Kaefer', age:30}
+      , {name: 'Anderson Faro', age:30}
+      ];
+    }
+  </script>
+</body>
+</html>
