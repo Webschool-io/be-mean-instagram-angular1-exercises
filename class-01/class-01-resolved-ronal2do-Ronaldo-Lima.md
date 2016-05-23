@@ -1,3 +1,7 @@
+Nome: Ronaldo Lima
+Github: ronal2do
+Data: 1463970721
+
 ## 1 - Explique qual é a definição de MVC, MVVM e MVP
 
 ### MVC: 
