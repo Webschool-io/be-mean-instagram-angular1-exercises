@@ -7,7 +7,8 @@ Data: 1464228380
 
 ## 1- Crie 1 exemplo para pelo menos 5 filtros padrões do Angular.
 
-```html<!doctype html>
+```html
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -96,11 +97,8 @@ Data: 1464228380
       
       .filter('ageMetter', function() {
           return function(text) {
-              
                 if(text < 18) return 'You need to be older to have fun here';
                 if(text >= 18) return 'Welcome, you are entitled to a beer!';
-                
-              
           };
       });
   </script>
@@ -112,7 +110,7 @@ Data: 1464228380
 ## 3- Crie um filtro que receba um horário, entre 0:00 e 23:59, e diga:
 
 * Bom dia. // até 12:00
-* Boa tarde. // até 16:00.
+* Boa tarde. // até 18:00.
 * Boa noite.
 
 Dependendo do horário.
