@@ -1,0 +1,227 @@
+<html lang="pt-br" data-ng-app="BeMEAN">
+<head>
+    <meta charset="UTF-8">
+    <title>BeMEAN</title>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+	<style>
+		.wrapper {
+			max-width: 600px;
+			margin:0 auto;
+		}
+		.btn {
+			margin-bottom: 25px;
+		}
+	</style>
+</head>
+
+<body>
+  	<section class="row wrapper" data-ng-controller="UserController as User">
+		<h2>{{User.titulo}}</h2>
+		
+		<p class="col s12">
+			<label>Nome:
+				<input type="text" data-ng-model="User.form.Nome">
+			</label>
+			</br>
+			<label>Email:
+				<input type="text" data-ng-model="User.form.Email">
+			</label>
+		</p>
+		<button data-ng-click="User.addUser(User.form)" class="btn btn-large green waves-effect waves-light col s6" type="submit" name="action">Adicionar
+		</button></br>
+		<button data-ng-click="User.save(User.form)" class="btn btn-large blue waves-effect waves-light col s6" type="submit" name="action">Salvar
+		</button>
+		<label>Busca:<input data-ng-model="searchUser"></label>
+		<table>
+			<thead>
+				<tr>
+				  <th></th>
+					<th><a href="" data-ng-click="User.ordenar('Nome')">Nome</a></th>
+					<th><a href="" data-ng-click="User.ordenar('Email')">Email</a></th>
+				</tr>
+		</thead>
+		<tbody>
+				<tr data-ng-repeat="user in User.users |filter:searchUser">
+          <td>
+            <input type="checkbox" id="user-{{$index}}" ng-model="user.selecionado" />
+            <label for="user-{{$index}}"></label>
+          </td>				  
+					<td>{{ user.Nome }}</td>
+					<td>{{ user.Email }}</td>
+					<td>
+          	<button data-ng-click="User.edit(user,$index)" class="btn btn-large blue waves-effect waves-light col s12"
+          	type="submit" name="action">Editar</button>					  
+					</td>
+				</tr>
+			</tbody>
+		</table>
+    <button data-ng-click="User.remove(User.users)" 
+    class="btn btn-large red waves-effect waves-light col s12" type="submit" name="action">
+      Remover
+    </button>
+	</section>
+
+		<br>
+		<br>
+		<br>
+		
+<!-- ProfessorController -->	
+	<section class="row wrapper" data-ng-controller="ProfessorController as Prof">
+		<h2>{{Prof.titulo}}</h2>
+		
+		<p class="col s12">
+			<label>Nome:
+				<input type="text" data-ng-model="Prof.form.Nome">
+			</label>
+			</br>
+			<label>Idade:
+				<input type="text" data-ng-model="Prof.form.Idade">
+			</label>
+		</p>
+		<button data-ng-click="Prof.addProf(Prof.form)" class="btn btn-large green waves-effect waves-light col s6" type="submit" name="action">Adicionar
+		</button></br>
+		<button data-ng-click="Prof.saveWithForEach(Prof.form)" class="btn btn-large blue waves-effect waves-light col s6" type="submit" name="action">Salvar
+		</button>
+		<label>Busca:<input data-ng-model="searchProf"></label>
+		<table>
+			<thead>
+				<tr>
+				  <th></th>
+					<th>Nome</th>
+					<th>Idade</th>
+				</tr>
+		</thead>
+		<tbody>
+				<tr data-ng-repeat="professor in Prof.professores |filter:searchProf">
+          <td>
+            <input type="checkbox" id="professor-{{$index}}" ng-model="professor.selecionado" />
+            <label for="professor-{{$index}}"></label>
+          </td>				  
+					<td>{{ professor.Nome }}</td>
+					<td>{{ professor.Idade }}</td>
+					<td>
+          	<button data-ng-click="Prof.edit(professor,$index)" class="btn btn-large blue waves-effect waves-light col s12"
+          	type="submit" name="action">Editar</button>					  
+					</td>
+				</tr>
+			</tbody>
+		</table>
+    <button data-ng-click="Prof.remove(Prof.professores)" 
+    class="btn btn-large red waves-effect waves-light col s12" type="submit" name="action">
+      Remover
+    </button>	  
+	</section>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+          
+<script>
+angular.module('BeMEAN', [])
+  .controller('UserController',UserController)
+  .controller('ProfessorController',ProfessorController);
+  
+// ProfessorController  
+  function ProfessorController() {
+    var vm = this;
+    vm.titulo = "Webschool - Professores";
+    vm.professores = [
+    	{Nome:"Jean Carlo Nascimento",Idade:30}
+    	,{Nome:"Vagner Kaefer",Idade:35}
+    	,{Nome:"Anderson Faro",Idade:35}
+    ];
+    
+    vm.addProf = addProf;
+    function addProf(professor) {
+      vm.professores.push(angular.copy(professor));
+    }
+    
+    vm.edit = edit;
+    function edit(professor,index) {
+      vm.form = angular.copy(professor);
+      vm.form.index = index;
+    }
+    
+	  vm.save = save;
+	  function save(professor) {
+	    var professores = vm.professores.map(function(el,i) {
+	      if(i === professor.index) {
+	        delete professor.index;
+	        return professor;
+	      }
+	      return el;
+	    });
+	    vm.professores = professores;
+	  }
+	  
+	  vm.saveWithForEach = saveWithForEach;
+	  function saveWithForEach(professor) {
+      vm.professores.forEach(function alterar(value,index) {
+        if(professor.index === index) {
+          vm.professores.splice(professor.index,1,professor);
+        }
+      });
+	  }
+	  
+	  vm.remove = remove;
+	  function remove(professores) {
+	    vm.professores = professores.filter(function(el) { return !el.selecionado});
+	  }
+    
+  }
+  
+// UserController
+	function UserController() {
+		var vm = this;
+		vm.titulo = "Webschool - Usuários";
+		vm.users = [
+			{Nome: 'Gabriel Kalani', Email: 'gabrielsilva1956@gmail.com', Username:'gkal19'}
+			,{Nome: 'Jean Carlo Nascimento', Email: 'jnascimento@gmail.com', Username:'Suissa'}
+			,{Nome: 'Pica-pau', Email: 'pica@pau.com (lenny face)', Username:'na1sei'}
+		];
+		
+		vm.addUser = addUser;
+		function addUser(user) {
+			vm.users.push(angular.copy(user));
+		}
+		
+		vm.ordenar = ordenar;
+		function ordenar(campo) {
+			console.log(campo);
+			vm.predicate = campo;
+			vm.reverse = !vm.reverse;
+		}
+		
+    vm.remove = remove;
+    function remove(users) {
+      vm.users = users.filter(function(el){ return !el.selecionado });
+    }
+		
+		vm.removeWithSplice = removeWithSplice;
+		function removeWithSplice(users) {
+		  users.forEach(function(element,index) {
+		    if(users[index].selecionado) {
+		      users.splice(users.indexOf(element),1);
+	      }
+	    })
+	  }
+	  
+	  vm.edit = edit;
+	  function edit(user,index) {
+	    vm.form = angular.copy(user);
+	    vm.form.index = index;
+	  }
+	  
+	  vm.save = save;
+	  function save(user) {
+	    var users = vm.users.map(function(el,i) {
+	      if(i === user.index) {
+	        delete user.index;
+	        return user;
+	      }
+	      return el;
+	    });
+	    vm.users = users;
+	  }
+	}
+</script>
+</body>
+</html>
