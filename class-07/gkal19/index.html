@@ -142,7 +142,7 @@ angular.module('BeMEAN', [])
     
 	  vm.save = save;
 	  function save(professor) {
-	    var professores = vm.professores.map(function(el,i) {
+	    var professores = vm.professores.forEach(function(el,i) {
 	      if(i === professor.index) {
 	        delete professor.index;
 	        return professor;
@@ -152,14 +152,14 @@ angular.module('BeMEAN', [])
 	    vm.professores = professores;
 	  }
 	  
-	  vm.saveWithForEach = saveWithForEach;
+	  /*vm.saveWithForEach = saveWithForEach;
 	  function saveWithForEach(professor) {
       vm.professores.forEach(function alterar(value,index) {
         if(professor.index === index) {
           vm.professores.splice(professor.index,1,professor);
         }
       });
-	  }
+	  } */
 	  
 	  vm.remove = remove;
 	  function remove(professores) {
