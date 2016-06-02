@@ -5,17 +5,17 @@
 **Data** 1464870705
 
 ## Fazer a função de `save` no Controller de professores e utilizar `forEach` em vez de `map`.
+```html
+<button data-ng-click="Prof.saveProf(Prof.form)" class="btn btn-large blue waves-effect waves-light col s6" type="submit" name="action">Salvar</button>
+```
 ```js
-vm.save = save;
-	  function save(professor) {
-	    var professores = vm.professores.forEach(function(el,i) {
-	      if(i === professor.index) {
-	        delete professor.index;
-	        return professor;
-	      }
-	      return el;
-	    });
-	    vm.professores = professores;
+vm.saveProf = saveProf;
+	  function saveProf(professor) {
+      vm.professores.forEach(function (value,index) {
+        if(professor.index === index) {
+          vm.professores.splice(professor.index,1,professor);
+        }
+      });
 	  }
 ```
 
