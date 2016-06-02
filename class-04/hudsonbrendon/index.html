@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html data-ng-app="BeMEAN">
+  <head>
+    <meta charset="utf-8">
+    <title>Be MEAN  </title>
+    <link rel="stylesheet" href="bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+
+
+    <div class="container" data-ng-controller="UserController as User">
+      <h1>{{ User.titulo }}</h1>
+      <label>Busca: <input ng-model="searchUser"></label>
+      <span data-ng-init="predicate = 'age'; reverse = true "></span>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th data-ng-repeat="(key, value) in User.users[0]">{{ key }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="user in User.users | orderBy:predicate:reverse | filter:searchUser">
+            <td data-ng-repeat="(key, value) in user">{{ value }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="container" data-ng-controller="CursoController as Curso">
+      <h1>{{ Curso.titulo }}</h1>
+      <label>Busca: <input ng-model="searchCurso"></label>
+      <span data-ng-init="predicate = 'name'; reverse = true "></span>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th data-ng-repeat="(key, value) in Curso.cursos[0]">{{ key }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ng-repeat="curso in Curso.cursos | orderBy:predicate:reverse | filter:searchCurso">
+            <td data-ng-repeat="(key, value) in curso">{{ value }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="angular.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script>
+      angular.module('BeMEAN', [])
+        .controller('UserController', UserController)
+        .controller('CursoController', CursoController);
+
+        function UserController() {
+          var vm = this;
+          vm.titulo = "Be MEAN - Usuários";
+          vm.users = [
+            {name: 'Hudson', email: 'hudson@gmail.com', age: 23},
+            {name: 'Débora', email: 'debora@gmail.com', age: 22},
+            {name: 'Maria', email: 'maria@gmail.com', age: 21}
+          ];
+        }
+
+
+        function CursoController() {
+          var vm = this;
+          vm.titulo = "Be MEAN - Cursos";
+          vm.cursos = [
+            {name: 'Be MEAN', teacher: 'Suissa', age: 30},
+            {name: 'Python e Django', teacher: 'Hudson', age: 23},
+            {name: 'Java', teacher: 'Jorge', age: 26},
+          ];
+        }
+    </script>
+  </body>
+</html>
