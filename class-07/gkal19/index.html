@@ -81,7 +81,7 @@
 		</p>
 		<button data-ng-click="Prof.addProf(Prof.form)" class="btn btn-large green waves-effect waves-light col s6" type="submit" name="action">Adicionar
 		</button></br>
-		<button data-ng-click="Prof.saveWithForEach(Prof.form)" class="btn btn-large blue waves-effect waves-light col s6" type="submit" name="action">Salvar
+		<button data-ng-click="Prof.saveProf(Prof.form)" class="btn btn-large blue waves-effect waves-light col s6" type="submit" name="action">Salvar
 		</button>
 		<label>Busca:<input data-ng-model="searchProf"></label>
 		<table>
@@ -139,8 +139,8 @@ angular.module('BeMEAN', [])
       vm.form = angular.copy(professor);
       vm.form.index = index;
     }
-    
-	  vm.save = save;
+	
+	/*vm.save = save;
 	  function save(professor) {
 	    var professores = vm.professores.forEach(function(el,i) {
 	      if(i === professor.index) {
@@ -150,16 +150,16 @@ angular.module('BeMEAN', [])
 	      return el;
 	    });
 	    vm.professores = professores;
-	  }
+	  }*/
 	  
-	  /*vm.saveWithForEach = saveWithForEach;
-	  function saveWithForEach(professor) {
-      vm.professores.forEach(function alterar(value,index) {
+	  vm.saveProf = saveProf;
+	  function saveProf(professor) {
+      vm.professores.forEach(function (value,index) {
         if(professor.index === index) {
           vm.professores.splice(professor.index,1,professor);
         }
       });
-	  } */
+	  }
 	  
 	  vm.remove = remove;
 	  function remove(professores) {
