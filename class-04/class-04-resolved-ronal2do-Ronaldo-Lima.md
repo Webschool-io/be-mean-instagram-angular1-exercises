@@ -1,6 +1,6 @@
-Nome: Ronaldo Lima
-Github: ronal2do
-Data: 1464282108
+**Nome:** Ronaldo Lima
+**Github:** ronal2do
+**Data:** 1464282108
 
 # Angularjs 1 - Aula 04 - Exercício
 
