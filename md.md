@@ -6,10 +6,12 @@
 
 ## Índice
 
-##### [Exercício 01](#exercicio-01)
+##### [Exercício-01](#exercicio-01)
 
 * [Schema Correto](#schema-correto)
 * [Schema Incorreto](#schema-incorreto)
+
+##### [Exercício-02](#exercicio-02)
 
 Anotação: A organização de códigos utilizadas nas aulas de Node.js utilizando `app.js` e `config.js` será daqui para frente.
 
@@ -133,8 +135,10 @@ Resultado:
 Mongoose default connection connected to mongodb://localhost/be-mean-instagram
 Mongoose default connection is open
 ```
+## Exercicio-02
+=============
 
-## Cadastre 3 pokemons **de uma só vez**:
+> Cadastre 3 pokemons **de uma só vez**:
 
 ```js
 'use strict';
