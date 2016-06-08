@@ -10,7 +10,6 @@
 
 * [Schema Correto](#schema-correto)
 * [Schema Incorreto](#schema-incorreto)
-
 <br>
 
 ##### [Exercício-02](#exercicio-02)
