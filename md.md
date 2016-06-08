@@ -17,6 +17,7 @@
 ##### [Exercício-03](#exercicio-03)
 ##### [Exercício-04](#exercicio-04)
 ##### [Exercício-05](#exercicio-05)
+##### [Resumo da Aula](#resumo-da-aula)
 <br>
 > A organização de códigos utilizadas nas aulas de Node.js utilizando `app.js` e `config.js` será usada nos exercícios daqui em diante.
 
@@ -387,4 +388,44 @@ Mongoose default connection is open
      bytesRead: 0,
      stubBuffer: null } }
      ```
-     
+## Resumo da Aula
+=============     
+
+Ao termino dessas aulas pude chegar a concluir que:
+<br>
+Utilizado na programação com NodeJS, o Mongoose é quem será o responsável por gerenciar schemas do nosso banco de dados. É uma ferramenta do MongoDB para modelagem de objetos projetados para trabalhar em um ambiente assíncrono. Para definir uma conexão é necessário utilizaro `mongoose.connect` e caso para a criação de conexões adicionais é simples utilizando o `mongoose.createConnection`.
+```js
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/meu-banco-de-dados');
+```
+E ele possue 4 tipos de eventos:
+- error: quando acontece um erro
+- connected: quando conectamos com o MongoDb
+- open: quando a conexão foi aberta com o MongoDb
+- disconnected: quando o MongoDb é desconectado da nossa aplicação
+```js
+mongoose.connection.on('connected', function () {  
+  console.log('Mongoose default connection open to ' + dbURI);
+});
+
+mongoose.connection.on('error',function (err) {  
+  console.log('Mongoose default connection error: ' + err);
+});
+
+mongoose.connection.on('disconnected', function () {  
+  console.log('Mongoose default connection disconnected');
+});
+
+mongoose.connection.on('open', function () {  
+  console.log('Mongoose default connection is open');
+});
+```
+Por último para fechar a conexão usaremos o `process.on` com o evento `SIGINIT`
+```js
+process.on('SIGINT', function() {  
+  mongoose.connection.close(function () {
+    console.log('Mongoose default connection disconnected through app termination');
+    process.exit(0);
+  });
+});
+```
