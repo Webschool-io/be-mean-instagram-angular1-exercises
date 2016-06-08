@@ -6,7 +6,7 @@
 
 ## Índice
 
-##### [Exercício-01](#exercicio-01)
+##### [Exercício 01](#exercicio-01)
 
 * [Schema Correto](#schema-correto)
 * [Schema Incorreto](#schema-incorreto)
