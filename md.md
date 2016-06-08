@@ -13,7 +13,7 @@
 
 Anotação: A organização de códigos utilizadas nas aulas de Node.js utilizando `app.js` e `config.js` será daqui para frente.
 
-## Exercicio 01
+## Exercicio-01
 =============
 
 > Crie um schema com cada tipo explicado inserindo tanto um objeto correto como um objeto que desencadeie erros de validação padrão criar especificamente:
