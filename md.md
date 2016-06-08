@@ -1,9 +1,7 @@
 # Node.js - Aula 06 - Exercício
-
 **User:** [gkal19](https://github.com/gkal19)
-
 **Autor:** Gabriel Kalani
-
+**Data:** 1465408594
 ## Índice
 
 ##### [Exercício-01](#exercicio-01)
