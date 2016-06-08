@@ -8,6 +8,7 @@ Data: 1464228380
 ## 1- Crie 1 exemplo para pelo menos 5 filtros padrões do Angular.
 
 ```html
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,6 +16,7 @@ Data: 1464228380
   <link rel="stylesheet" href="http://bulma.io/css/main.css">
   <title>Ex 2</title>
 </head>
+
 <body data-ng-app="AnyApp">
       <div class="container">
            <label class="label">Name</label>
@@ -171,4 +173,5 @@ Dependendo do horário.
  
 </body>
 </html>
+
 ```
