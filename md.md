@@ -11,9 +11,15 @@
 * [Schema Correto](#schema-correto)
 * [Schema Incorreto](#schema-incorreto)
 
-##### [Exercício-02](#exercicio-02)
+<br>
 
-Anotação: A organização de códigos utilizadas nas aulas de Node.js utilizando `app.js` e `config.js` será daqui para frente.
+##### [Exercício-02](#exercicio-02)
+##### [Exercício-03](#exercicio-03)
+##### [Exercício-04](#exercicio-04)
+##### [Exercício-05](#exercicio-05)
+<br>
+##### [Anotação](#anotação)
+
 
 ## Exercicio-01
 =============
@@ -233,7 +239,10 @@ Inserido:  [ { types: [ 'corretor', 'imoveis' ],
     __v: 0 } ]
 ```
 
-## Busque **todos** os Pokemons com `attack > 50` e `height > 0.5`:
+## Exercicio-03
+=============
+
+> Busque **todos** os Pokemons com `attack > 50` e `height > 0.5`:
 
 ```js
 let query = {$and: [{attack: {$gt: 50}}, {height: {$gt: 0.5}}]};
@@ -248,8 +257,10 @@ module.export = PokemonModel;
 
 NOTA: Foi retornado 4 pokémons
 
+## Exercicio-04
+=============
 
-## Altere, **inserindo**, o Pokemon `Nerdmon` com `attack` igual a 49 e com os valores dos outros campos a sua escolha.
+> Altere, **inserindo**, o Pokemon `Nerdmon` com `attack` igual a 49 e com os valores dos outros campos a sua escolha.
 
 ```js
 let query = {name: 'Nerdmon'};
@@ -274,7 +285,10 @@ Resultado:
   upserted: [ { index: 0, _id: 575879db3a2ac61c40d0c87e } ] }
 ```
 
-## Remova **todos** os Pokemons com `attack` **acima de 50**.
+## Exercicio-05
+=============
+
+> Remova **todos** os Pokemons com `attack` **acima de 50**.
 
 ```js
 PokemonModel.remove({attack: {$gt: 50}}, (err, data) => {
@@ -374,3 +388,6 @@ Mongoose default connection is open
      bytesRead: 0,
      stubBuffer: null } }
      ```
+     
+     ## Anotação
+     > A organização de códigos utilizadas nas aulas de Node.js utilizando `app.js` e `config.js` será usada nos exercícios daqui em diante.
