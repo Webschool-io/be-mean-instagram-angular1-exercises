@@ -18,7 +18,7 @@
 ##### [Exercício-04](#exercicio-04)
 ##### [Exercício-05](#exercicio-05)
 <br>
-##### [Anotação](#anotação)
+##### [Anotação](#anotacao)
 
 
 ## Exercicio-01
@@ -389,5 +389,5 @@ Mongoose default connection is open
      stubBuffer: null } }
      ```
      
-     ## Anotação
+     ## Anotacao
      > A organização de códigos utilizadas nas aulas de Node.js utilizando `app.js` e `config.js` será usada nos exercícios daqui em diante.
