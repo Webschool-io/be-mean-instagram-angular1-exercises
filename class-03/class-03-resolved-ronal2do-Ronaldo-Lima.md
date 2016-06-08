@@ -1,12 +1,13 @@
+# Angularjs 1 - Aula 03 - Exercício
+
 **Nome:** Ronaldo Lima
 **Github:** ronal2do
 **Data:** 1464274290
 
-# Angularjs 1 - Aula 03 - Exercício
-
 ## 1. Criar 1 Controller de Professores, igual aos outros, seguindo nosso último padrão.
 
 ```html
+
 <!DOCTYPE html>
 <html data-ng-app="AnyApp">
   <head>
@@ -58,6 +59,7 @@
 ## 2. Utilizar seu filtro criado na aula passada em alguns dos seus valores.
 
 ```html
+
 <!DOCTYPE html>
 <html data-ng-app="AnyApp">
   <head>

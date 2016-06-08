@@ -1,8 +1,10 @@
+
+
+# Angularjs 1 - Aula 05 - Exercício
+
 **Nome:** Ronaldo Lima
 **Github:** ronal2do
 **Data:** 1464313682
-
-# Angularjs 1 - Aula 05 - Exercício
 
 ## 1. Criar uma função para ordenar uma tabela à partir de uma coluna, *clickando* na sua *tr>th*, ordenando pelo campo da coluna.
 

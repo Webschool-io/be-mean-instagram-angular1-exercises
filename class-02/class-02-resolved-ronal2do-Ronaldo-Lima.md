@@ -1,8 +1,8 @@
+
+# AngularJS - Aula 02 - Exercício
 **Nome:** Ronaldo Lima
 **Github:** ronal2do
 **Data:** 1464228380
-
-# AngularJS - Aula 02 - Exercício
 
 
 ## 1- Crie 1 exemplo para pelo menos 5 filtros padrões do Angular.
