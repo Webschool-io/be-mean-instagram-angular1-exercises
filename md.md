@@ -10,6 +10,7 @@
 
 * [Schema Correto](#schema-correto)
 * [Schema Incorreto](#schema-incorreto)
+
 <br>
 
 ##### [Exercício-02](#exercicio-02)
@@ -17,8 +18,7 @@
 ##### [Exercício-04](#exercicio-04)
 ##### [Exercício-05](#exercicio-05)
 <br>
-##### [Anotação](#Anotacao)
-
+> A organização de códigos utilizadas nas aulas de Node.js utilizando `app.js` e `config.js` será usada nos exercícios daqui em diante.
 
 ## Exercicio-01
 =============
@@ -388,5 +388,3 @@ Mongoose default connection is open
      stubBuffer: null } }
      ```
      
-     ## Anotacao
-     > A organização de códigos utilizadas nas aulas de Node.js utilizando `app.js` e `config.js` será usada nos exercícios daqui em diante.
