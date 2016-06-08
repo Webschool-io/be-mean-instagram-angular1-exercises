@@ -1,8 +1,8 @@
 # Angularjs 1 - Aula 03 - Exercício
 
-**Nome:** Ronaldo Lima
-**Github:** ronal2do
-**Data:** 1464274290
+**Nome:** Ronaldo Lima  
+**Github:** ronal2do   
+**Data:** 1464274290   
 
 ## 1. Criar 1 Controller de Professores, igual aos outros, seguindo nosso último padrão.
 

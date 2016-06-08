@@ -1,8 +1,9 @@
-## 1 - Explique qual é a definição de MVC, MVVM e MVP
+# AngularJS - Aula 01 - Exercício  
+** Nome:** Ronaldo Lima     
+** Github:** ronal2do      
+** Data:** 1463970721   
 
-** Nome:** Ronaldo Lima
-** Github:** ronal2do
-** Data:** 1463970721
+## 1 - Explique qual é a definição de MVC, MVVM e MVP
 
 ### MVC: 
     Model View Controller - Esse padrão divide seu sistema em 3 responsábilidades, **Model** - Define suas regras de negócio, **View** - A parte visual, renderizacão do html, **Controller** - Faz a comunicação entre elas manipulando os dados.
