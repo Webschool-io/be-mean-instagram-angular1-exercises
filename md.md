@@ -8,8 +8,8 @@
 
 ##### [Exercício-01](#Crie-um-Schema-com-cada-tipo-explicado,-inserindo-tanto-um-objeto-correto,-como-um-objeto-que-desencadeie-erros-de-validação-padrão,-criar-especificamente)
 
-* [Schema Correto](#schema-Correto)
-* [Schema Incorreto](#schema-Incorreto)
+* [Schema Correto](#schema-correto)
+* [Schema Incorreto](#schema-incorreto)
 
 Anotação: A organização de códigos utilizadas nas aulas de Node.js utilizando `app.js` e `config.js` será daqui para frente.
 
@@ -18,7 +18,7 @@ Anotação: A organização de códigos utilizadas nas aulas de Node.js utilizan
 * 1.1. para String: `enum`, `match`, `maxlength` e `minlength`
 * 1.2.  para Number: `max` e `min`
 
-## Schema-Correto
+## Schema-correto
 
 ```js
 'use strict';
