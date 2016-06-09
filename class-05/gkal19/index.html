@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" data-ng-app="BeMEAN">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <title>BeMEAN</title>
+</head>
+<body class="container">
+	<!-- UserController -->
+ 	<div class="container" data-ng-controller="UserController as User">
+ 		<h1>{{User.titulo}}</h1>
+ 		<p>
+ 			<label>Nome:
+ 				<input type="text" data-ng-model="form.User.nome">
+ 			</label>
+ 			</br>
+ 			<label>E-mail:
+ 				<input type="text" data-ng-model="form.User.email">
+ 			</label>
+ 			</br>
+ 			<label>Username:
+ 				<input type="text" data-ng-model="form.User.username">
+ 			</label>
+ 		</p>
+ 		<button data-ng-click="User.addUser(form.User)">Adicionar Usuário</button></br>
+ 		<label>Busca:<input placeholder="Busque por um usuário" data-ng-model="searchUser"></label>
+ 		<table>
+ 			<thead>
+ 				<tr>
+ 					<th data-ng-repeat="(key,value) in User.users[0]"><a href="" data-ng-click="User.ordenar('key')">{{ key }}</a></th>
+ 				</tr>
+ 			</thead>
+ 
+ 			<tbody>
+ 				<tr data-ng-repeat="user in User.users | orderBy:User.predicate:User.reverse |filter:searchUser">
+ 					<td data-ng-repeat="(key,value) in user">{{ value }}</td>
+ 				</tr>
+ 			</tbody>
+ 		</table>
+ 	</div>
+ 	<!-- CursoController -->
+ 	<div class="container" data-ng-controller="CursoController as Curso">
+ 		<h1>{{Curso.titulo}}</h1>
+ 		<span data-ng-init="predicateCurso= 'Nota'"></span>
+ 		<label>Busca:<input placeholder="Busque por um curso" data-ng-model="searchCurso"></label>
+ 		<table>
+ 			<thead>
+ 				<tr>
+ 					<th data-ng-repeat="(key,value) in Curso.cursos[0]">{{ key }}</th>
+ 				</tr>
+ 			</thead>
+ 				
+ 			<tbody>
+ 				<tr data-ng-repeat="curso in Curso.cursos | orderBy:predicateCurso | filter:searchCurso">
+ 					<td data-ng-repeat="(key,value) in curso">{{ value }}</td>
+ 				</tr>
+ 			</tbody>
+ 		</table>
+ 	</div>
+ 	<!-- ProfessorController -->
+ 	<div class="container" data-ng-controller="ProfessorController as Professor">
+ 		<h1>{{Professor.titulo}}</h1>
+ 		
+ 		<p>
+ 			<label>Nome:
+ 				<input type="text" data-ng-model="form.prof.nome">
+ 			</label>
+ 			</br>
+ 			<label>Idade:
+ 				<input type="number" data-ng-model="form.prof.idade">
+ 			</label>
+ 		</p>
+ 		<button data-ng-click="Professor.addProf(form.prof)">Adicionar Professor</button></br>
+ 		<span data-ng-init="predicateProf= 'idade'"></span>
+ 		<label>Busca:<input placeholder="Busque por um professor" data-ng-model="searchProfessor"></label>
+ 		<table>
+ 			<thead>
+ 				<tr>
+ 					<th data-ng-repeat="(key,value) in Professor.professores[0]">{{ key }}</th>
+ 				</tr>
+ 			</thead>
+ 				
+ 			<tbody>
+ 				<tr data-ng-repeat="professor in Professor.professores | orderBy:'predicateProf' | filter:searchProfessor">
+ 					<td data-ng-repeat="(key,value) in professor">{{ value }}</td>
+ 				</tr>
+ 			</tbody>
+ 		</table>
+ 	</div>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+           
+     <script>
+         angular.module('BeMEAN', [])
+ 			.controller('UserController',UserController)
+ 			.controller('CursoController',CursoController)
+ 			.controller('ProfessorController',ProfessorController);
+ 			
+ 			function UserController() {
+ 				var vm = this;
+ 				vm.titulo = "Webschool - Usuários";
+ 				vm.users = [
+ 					{Nome: 'Gabriel Kalani', Email: 'gabrielsilva1956@gmail.com', Username:'gkal19'}
+			        ,{Nome: 'Jean Carlo Nascimento', Email: 'jnascimento@gmail.com', Username:'Suissa'}
+			        ,{Nome: 'Pica-pau', Email: 'pica@pau.com (lenny face)', Username:'na1sei'}
+ 				];
+ 				
+ 				vm.addUser = addUser;
+ 				function addUser(user) {
+ 					vm.users.push(angular.copy(user));
+ 				}
+ 				
+ 				vm.ordenar = ordenar;
+ 				function ordenar(campo) {
+ 					console.log(campo);
+ 					vm.predicate = campo;
+ 					vm.reverse = !vm.reverse;
+ 				}
+ 			}
+ 			
+ 			function CursoController() {
+ 				var vm = this;
+ 				vm.titulo = "Webschool - Cursos";
+ 				vm.cursos = [
+ 					{Nome: 'JS', Instrutor: 'Jean Carlo Nascimento', Nota:10}
+			      	,{Nome: 'PHP', Instrutor: 'Vagner Kaefer', Nota:"9,5"}
+			      	,{Nome: 'Mobile', Instrutor: 'Anderson Faro', Nota:8}
+ 				]
+ 			}
+ 			
+ 			function ProfessorController() {
+ 				var vm = this;
+ 				vm.titulo = "Webschool - Professores";
+ 				vm.professores = [
+ 					{Nome: 'Jean Carlo Nascimento', Idade:30, Palestrante: 'Sim'}
+			      	,{Nome: 'Vagner Kaefer', Idade:30, Palestrante:'Não definido'}
+			      	,{Nome: 'Anderson Faro', Idade:30, Palestrante:'Não definido'}
+ 				]
+ 				vm.addProf = addProf;
+ 				function addProf(professor) {
+ 					vm.professores.push(angular.copy(professor));
+ 				}
+ 			}
+     </script>
+ </body>
+ </html>

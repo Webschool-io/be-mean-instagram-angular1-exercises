@@ -1,0 +1,40 @@
+<html lang="pt-br" data-ng-app="bemean">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtros</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <form>
+		<span>Que horas são e qual seu nome?</span>
+			<div class="form-group">
+			<label for="name">Nome: </label>
+			<input type="text" class="form-control" name="name" data-ng-model="name">
+			</div>
+			
+           <label for="nome">Hora:
+                <input type="time" data-ng-model="hour">
+            </label>
+        </form>
+        {{hour | calcular}}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script>
+        angular.module('bemean', [])
+            .filter('calcular',function() {
+                return function(text) {
+                    if(text){
+                        var hour = text.getHours();
+                        if(hour >= 0 && hour <= 12) {return 'Bom dia '}
+                        if(hour >= 12 && hour <= 18) {return 'Boa tarde '}
+                        if(hour >= 18 && hour <= 23) {return 'Boa noite '}
+                    }
+                }
+            });
+    </script>
+</body>
+</html>
