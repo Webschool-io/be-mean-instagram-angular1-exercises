@@ -1,5 +1,6 @@
 # AngularJS - Aula 01 - Exercício
-autor: Gustavo Prado
+**user:** [gustavoprado013](https://github.com/gustavoprado013)  
+**autor:** Gustavo Prado
 
 ## 1 - Explique qual é a definição de MVC, MVVM e MVP
 

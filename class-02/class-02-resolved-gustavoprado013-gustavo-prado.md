@@ -1,5 +1,6 @@
 # AngularJS - Aula 02 - Exercício
-autor: Gustavo Prado
+**user:** [gustavoprado013](https://github.com/gustavoprado013)  
+**autor:** Gustavo Prado
 
 ## Crie 1 exemplo para pelo menos 5 filtros padrões do Angular.
 
