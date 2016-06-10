@@ -221,7 +221,9 @@
 
 ## 3. Criar um campo de filtro para cada ng-repeat.
 
-```html<!DOCTYPE html>
+```html
+
+<!DOCTYPE html>
 <html data-ng-app="AnyApp">
   <head>
     <meta charset="utf-8">
