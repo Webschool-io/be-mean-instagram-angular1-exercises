@@ -10,15 +10,15 @@
 
 ##### [Exercício-01](#1-crie-um-função-que-extenda-eventemitter-nela-crie-um-method-chamado-init-ele-deverá-ser-chamado-toda-vez-que-a-sua-função-for-iniciada-use-o-código-04-como-base-use-ele-no-prototype)
 
-* [Resultado 01](#resultado-1)
+* [Resultado 01](#resultado-01)
 
 ##### [Exercício-02](#2-faça-um-módulo-simples-para-ler-diretórios-usando-módulo-fs-fsreaddir-usando-o-exemplo-do-código-03-esse-modulo-deve-retornar-uma-promise)
 
-* [Resultado 02](#resultado-2)
+* [Resultado 02](#resultado-02)
 
 ##### [Exercício-03](#3-os-schemas-do-mongoose-podem-usar-promises-em-seus-alguns-methods-de-crud-liste-3-methods-que-usam-promise-se-chamada-da-função-exec-no-final-e-3-que-usam-exec-mostre-ao-menos-um-exemplo-de-cada)
 
-* [Resultado 03](#resultado-3)
+* [Resultado 03](#resultado-03)
 
 <br>
 ## 1. Crie um função que extenda EventEmitter, nela crie um method chamado init, ele deverá ser chamado toda vez que a sua função for iniciada. Use o código 04 como base (use ele no prototype).
