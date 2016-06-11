@@ -1,6 +1,6 @@
 Nome: Pablo Zaniolo
 
-Github: (https://github.com/pablozaniolo)
+Github: https://github.com/pablozaniolo
 
 Data: 1465598640
 
