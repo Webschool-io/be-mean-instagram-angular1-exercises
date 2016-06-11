@@ -24,33 +24,32 @@
 ## 1. Crie um função que extenda EventEmitter, nela crie um method chamado init, ele deverá ser chamado toda vez que a sua função for iniciada. Use o código 04 como base (use ele no prototype).
 
 ```js
-'use strict';
+var EventEmitter = require('events').EventEmitter;
+var util = require('util');
 
-const EventEmitter = require('events').EventEmitter;
-const util = require('util');
-
-function Potato() {
-  this.on('event:init', init);
+function User(data) {
+  this.name = data.name;
+  this.on('user:init', Name);
   EventEmitter.call(this);
-}
-
-util.inherits(Potato, EventEmitter);
-
-Potato.prototype.init = function () {
-  this.emit('event:init');
 };
 
-function init() {
-  console.log('Objeto Potato iniciado');
-}
+util.inherits(User, EventEmitter);
 
-// Executando
-var potato = new Potato();
-potato.init();
+User.prototype.init = function() {
+  this.emit('user:init', this.name);
+};
+
+function Name(name) {
+  console.log('Tá tranquilo, tá compilado. Meu nome é MC', name);
+};
+
+var User = new User({name: 'Pokémon'});
+User.init();
 ```
 ## Resultado 01
 ```shell
-Objeto potato iniciado
+$ node rogue.js
+Tá tranquilo, tá compilado. Meu nome é MC Pokémon
 ```
 
 ## 2. Faça um módulo simples para ler diretórios usando módulo FS (fs.readdir), usando o exemplo do código 03, esse modulo deve retornar uma Promise.
@@ -68,49 +67,18 @@ function readDir(path) {
   });
 }
 
-// Executing
+// Executando
 readDir('node_modules').then(function (data) {
   console.log(data);
 }).catch(function (err) {
   console.log(err);
 });
 
-// Test error
-readDir('modules').then(function (data) {
-  console.log(data);
-}).catch(function (err) {
-  console.log(err);
-});
 ```
 ## Resultado 02
 ```shell
-[ '.bin',
-  'async',
-  'bluebird',
-  'bson',
-  'core-util-is',
-  'debug',
-  'es6-promise',
-  'hooks-fixed',
-  'inherits',
-  'isarray',
-  'kareem',
-  'mongodb',
-  'mongodb-core',
-  'mongoose',
-  'mpath',
-  'mpromise',
-  'mquery',
-  'ms',
-  'muri',
-  'readable-stream',
-  'regexp-clone',
-  'require_optional',
-  'resolve-from',
-  'semver',
-  'sliced',
-  'string_decoder' ]
-  { [Error: ENOENT: no such file or directory, scandir 'modules'] errno: -2, code: 'ENOENT', syscall: 'scandir', path: 'modules' }
+$ node rogue.js
+[ 'mongoose' ]
 ```
 
 ## 3. Os schemas do mongoose podem usar promises, em seus alguns methods, de “crud”, liste 3 methods que usam promise, se chamada da função exec(), no final e 3 que usam exec(), mostre ao menos um exemplo de cada.
