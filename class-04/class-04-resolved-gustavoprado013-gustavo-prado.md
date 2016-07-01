@@ -1,9 +1,12 @@
-# AngularJS - Aula 03 - Exercício
+# AngularJS - Aula 04 - Exercício
 **user:** [gustavoprado013](https://github.com/gustavoprado013)  
 **autor:** Gustavo Prado
 
-## Criar 1 controller de professores, igual aos outros , seguindo nosso último padrão
-## Utilizar seu filtro criado na aula passada em algum dos seus valores.
+## 1 - Adicionar mais 1 campo em todos os Controllers e utlizar ele em orderBy.
+
+## 2 - Utilizar esse valor adicional no ng-init para cada ng-repeat da View.
+
+## 3 - Criar um filtro para cada ng-repeat.
 
 ```html
 <html lang="pt-br">

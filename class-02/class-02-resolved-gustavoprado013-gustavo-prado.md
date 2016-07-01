@@ -2,7 +2,7 @@
 **user:** [gustavoprado013](https://github.com/gustavoprado013)  
 **autor:** Gustavo Prado
 
-## Crie 1 exemplo para pelo menos 5 filtros padrões do Angular.
+## 1 - Crie 1 exemplo para pelo menos 5 filtros padrões do Angular.
 
 ```html
 <html lang="pt-br">
@@ -134,7 +134,7 @@
 </html>
 ```
 
-## Crie 1 filtro que receba um horário e entre as 0:00 e 23:59 diga
+## Crie 1 filtro que receba um horário e entre as 0:00 e 23:59 e diga
 ##Bom dia // até 12:00
 ##Boa tarde  // até 18:00
 ##Boa noite  
@@ -186,9 +186,6 @@
 		</form>
 
 	</div>
-
-
 </body>
-
 </html>
 ```

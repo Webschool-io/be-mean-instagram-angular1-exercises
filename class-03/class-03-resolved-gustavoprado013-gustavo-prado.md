@@ -2,8 +2,9 @@
 **user:** [gustavoprado013](https://github.com/gustavoprado013)  
 **autor:** Gustavo Prado
 
-## Criar 1 controller de professores, igual aos outros , seguindo nosso último padrão
-## Utilizar seu filtro criado na aula passada em algum dos seus valores.
+## 1 - Criar 1 controller de professores, igual aos outros , seguindo nosso último padrão
+
+## 2 - Utilizar seu filtro criado na aula passada em algum dos seus valores.
 
 ```html
 
