@@ -1,4 +1,4 @@
-# AngularJS - Aula 10 - Exercício
+# AngularJS - Aula 11 - Exercício
 
 **User:** [gkal19](https://github.com/gkal19)
 
