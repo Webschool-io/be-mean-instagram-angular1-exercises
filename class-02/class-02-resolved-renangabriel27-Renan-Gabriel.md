@@ -4,7 +4,7 @@ Nome: Renan Gabriel Almeida Silva
 
 Github: [renangabriel27](https://github.com/renangabriel27)
 
-Data: 1468270882989
+Data:1468270882989
 
 ## 1) Crie 1 exemplo para pelo menos 5 filtros padrões do Angular
 
