@@ -4,7 +4,7 @@ Nome: Renan Gabriel Almeida Silva
 
 Github: [renangabriel27](https://github.com/renangabriel27)
 
-Data: 10/07/2016 00:52
+Data:1468270882989
 
 ## 1) Criar a função de delete utilizando splice em vez de filter.
 
