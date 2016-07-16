@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" data-ng-app="aula02">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Be MEAN - AngularJS - Aula 02 - Exercício 01</title>
+
+    <style>
+        body{
+            background-color: rgba(249, 269, 168, .5);
+            font-size: 20px;
+            color: #696969;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Filtros Nativos do AngularJS</h1>
+    <ul>
+        <li>
+            <strong>currency</strong>
+            <br><span>Retorna um número para moeda: </span>
+
+            <label for="currency">
+                <input type="number" name="currency" id="currency" data-ng-model="number">
+                {{ number | currency:"R$ " }}
+            </label>
+        </li>
+
+        <li>
+            <strong>date</strong>
+            <br><span>Formata números em data: </span>
+
+            <label for="date">
+                <input type="text" name="date" id="date" data-ng-model="datein">
+                {{ datein | date:"dd/MM/yyyy" }}
+            </label>
+        </li>
+
+        <li>
+            <strong>uppercase</strong>
+            <br>
+
+            <label for="name">
+                <input type="text" name="name" id="name" data-ng-model="name">
+                {{ name | uppercase }}
+            </label>
+        </li>
+
+        <li>
+            <strong>lowercase</strong>
+            <br>
+
+            <label for="nickname">
+                <input type="text" name="nickname" id="nickname" data-ng-model="nickname">
+                {{ nickname | lowercase }}
+            </label>
+        </li>
+        <li>
+            <strong>limitTo</strong>
+            <br>
+
+            <label for="age">
+                <input type="text" name="age" id="age" data-ng-model="age">
+                {{ age | limitTo:3 }}
+            </label>
+        </li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+    <script>
+        angular.module('aula02', []);
+    </script>
+</body>
+
+</html>

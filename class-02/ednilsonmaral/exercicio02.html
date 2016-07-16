@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" data-ng-app="aula02">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Be MEAN - AngularJS - Aula 02 - Exercício 01</title>
+
+    <style>
+        body{
+            background-color: rgba(249, 269, 168, .5);
+            font-size: 20px;
+            color: #696969;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Verificando Idade</h1>
+
+    <strong>Idade: </strong>
+    <label for="age">
+        <input type="text" data-ng-model="age">
+    </label>
+
+    {{ age | checkAge }}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+    <script>
+        angular.module('aula02', [])
+            .filter('checkAge', function() {
+                return function(num){
+                    if(num<18) return "Menor de idade!";
+                    else return "Maior de idade, tá fudido!";
+                }
+            });
+    </script>
+</body>
+
+</html>
