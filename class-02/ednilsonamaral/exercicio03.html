@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" data-ng-app="aula02">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Be MEAN - AngularJS - Aula 02 - Exercício 01</title>
+
+    <style>
+        body{
+            background-color: rgba(249, 269, 168, .5);
+            font-size: 20px;
+            color: #696969;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Horário</h1>
+
+    <strong>Que horas são? </strong>
+    <label for="time">
+        <input type="text" data-ng-model="time">
+    </label>
+
+    {{ time | checkTime }}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+    <script>
+        angular.module('aula02', [])
+            .filter('checkTime', function() {
+                return function(num){
+                    switch (num) {
+                        case 1:
+                            if(num>='0:00' && num<='12:00') return console.log("Bom dia!");
+                            break;
+                        case 2:
+                            if(num>'12:00' && num<='18:00') return console.log("Boa tarde!");
+                            break;
+                        case 3:
+                            if(num>'18:00' && num<='23:59') return console.log("Boa noite, vá dormir!!");
+                            break;
+                        default:
+                            console.log("sei lá que horas são, véi!");
+                    }
+                }
+            });
+    </script>
+</body>
+
+</html>
