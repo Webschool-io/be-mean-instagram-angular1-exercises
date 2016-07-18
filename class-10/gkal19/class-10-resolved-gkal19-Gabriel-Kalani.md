@@ -27,22 +27,26 @@
 
 ### 2 - Criar mais 2 classes condicionais quando o elemento é selecionado.
 ```html
-<label>
-    <input type="checkbox" id="deleted" ng-model="deleted">
-       <label for="deleted">Condicional: Strike</label>
-    </label><br>
-    <label>
-       <input type="checkbox" id="important" ng-model="important">
-       <label for="important">Condicional: Bold</label>
-    </label><br>
-    <label>
-       <input type="checkbox" id="error" ng-model="error">
-       <label for="error">Condicional: Error</label>
-    </label>
+<td data-ng-class="{condicional1: user.selected}" >{{ user.name }}</td>
+<td data-ng-class="{condicional2: user.selected}">{{ user.email }}</td>
+```
+
+```css
+  .condicional1{
+      text-transform: uppercase;
+      color: #000;
+      font-weight: bolder;
+  }
+  .condicional2{
+     text-decoration: lowercase;
+     color: #000;
+     cursor: pointer;
+ }
 ```
 
 ### 3 - Zebrar a lista utilizando um teste ternário.
 > Explicando: Primeiramente utilizando a `Table` apenas acrescentei um `class="tabela"` a ela e acrescentei também o seguinte CSS...
+
 ```CSS
 .tabela tbody tr:nth-child(even) {
     background-color: #CCC;
@@ -51,6 +55,7 @@
     background-color: #FFF;
 }
 ```
+
 > Selecionei os elementos pares e ímpares assim precisando só acrescentar a classe `tabela` no `<table>`.
 
 ### 4 - Utilize o `ng-if` para estilizar, na listagem dos usuários quando um elemento está sendo editado.
