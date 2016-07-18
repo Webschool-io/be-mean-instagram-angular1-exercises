@@ -153,7 +153,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-class="{selected: user.selected}" class="item" data-ng-repeat="user in User.users | filter:searchUser | orderBy:User.predicate:User.reverse ">
+        <tr data-ng-disabled="User.editing" class="item" data-ng-repeat="user in User.users | filter:searchUser | orderBy:User.predicate:User.reverse ">
           <td>
             <input type="checkbox" id="user-{{$index}}" ng-model="user.selected" />
             <label for="user-{{$index}}"></label>
@@ -163,7 +163,7 @@
           <td>{{ user.type }}</td>
           <td>{{ user.active }}</td>
           <td>
-            <button data-ng-click="User.edit(user, $index)" class="btn blue waves-effect waves-light col s12" type="submit" name="action">Editar</button>
+            <button data-ng-disabled="User.editing" data-ng-click="User.edit(user, $index)" class="btn blue waves-effect waves-light col s12" type="submit" name="action">Editar</button>
           </td>
         </tr>
       </tbody>
