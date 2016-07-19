@@ -1,0 +1,15 @@
+<h2>Dados do user</h2>
+
+<p>Buscar o user pelo id: {{ UserDetails.routeParams.id }}</p>
+
+<div class="card-panel">
+	<form>
+		<label for="name">Nome: </label>
+		<input type="text" name="name" value="{{ UserDetails.users[UserDetails.routeParams.id].name }}">
+
+		<br><br><br>
+
+		<label for="email">Email: </label>
+		<input type="email" name="email" value="{{ UserDetails.users[UserDetails.routeParams.id].email }}">
+	</form>
+</div>
