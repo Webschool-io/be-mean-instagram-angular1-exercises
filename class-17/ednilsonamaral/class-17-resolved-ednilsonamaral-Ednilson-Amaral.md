@@ -42,6 +42,6 @@
 </div>
 ```
 
-![https://raw.githubusercontent.com/ednilsonamaral/be-mean-instagram-angular1/af6d86d276323a58b5dc430e97b066d117de93c8/img/print_aula_17.png](Print)
+![Print](https://raw.githubusercontent.com/ednilsonamaral/be-mean-instagram-angular1/af6d86d276323a58b5dc430e97b066d117de93c8/img/print_aula_17.png)
 
 * [Arquivos](/exercicio)
