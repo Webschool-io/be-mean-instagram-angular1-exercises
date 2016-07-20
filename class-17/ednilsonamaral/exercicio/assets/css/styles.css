@@ -1,0 +1,93 @@
+html body select{
+    display: inline-block;
+}
+
+[disabled]{
+    background-color: #ccc !important;
+}
+
+.wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.h1{
+    font-size: 30px;
+    font-weight: bolder;
+    color: blue;
+    text-align: center;
+}
+
+.h2{
+    font-size: 26px;
+    font-weight: bold;
+    color: blue;
+    text-align: center;
+}
+
+.animate{
+    transition: all linear 0.5s;
+}
+
+.ng-hide{
+    height: 0;
+}
+
+.item.ng-enter{
+    transition: all linear 0.5s;
+}
+
+.item.ng-enter{
+    opacity: 0;
+}
+
+.item.ng-enter.ng-enter-active{
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.2rem;
+    opacity: 1;
+}
+
+.item.ng-leave{
+    transition: all linear 0.5s;
+}
+
+.item.ng-leave{
+    opacity: 0;
+}
+
+.item.ng-leave.ng-leave-active{
+    opacity: 1;
+}
+
+.item.ng-move{
+    transition: all linear 1s;
+}
+
+.item.ng-move{
+    opacity: 0;
+}
+
+.item.ng-move.ng-move-active{
+    opacity: 1;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.strike{
+    text-decoration: line-through;
+}
+
+.ng-valid{
+    background-color: #B4E5C4;
+}
+
+.dirty{
+    background-color: #ccc;
+}
+
+.invalid{
+    background-color: red;
+}
