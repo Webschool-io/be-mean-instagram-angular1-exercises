@@ -1,24 +1,25 @@
 angular.module('User', ['ngAnimate', 'ngRoute'])
 	.config(config)
 	.controller('UserController', UserController)
-	.controller('UserDetailsController', UserDetailsController);
+	.controller('UserDetailsController', UserDetailsController)
+	.controller('UserGitHubController', UserGitHubController);
 
-function config($routeProvider){
+function config($routeProvider) {
 	$routeProvider
 		.when('/users', {
 			templateUrl: 'views/users-list.html',
 			controller: 'UserController',
 			controllerAs: 'User'
 		})
+		.when('/users/github/:user', {
+			templateUrl: 'views/users-github.html',
+			controller: 'UserGitHubController',
+			controllerAs: 'UserGitHub'
+		})
 		.when('/users/:id', {
 			templateUrl: 'views/user-details.html',
 			controller: 'UserDetailsController',
 			controllerAs: 'UserDetails'
-		})
-		.when('/users/:id/edit', {
-			templateUrl: 'views/user-edit.html',
-			controller: 'UserController',
-			controllerAs: 'User'
 		});
 }
 
@@ -39,11 +40,11 @@ function UserController($routeParams) {
 	};
 
 	vm.users = [
-    {name: 'Gabriel Kalani', email: 'gabrielsilva1956@gmail.com', type: 'student', active: true},
-    {name: 'Diego Ferreira', email: 'tuchedsf@gmail.com', type: 'student', active: false},
-    {name: 'Franciele Pereira', email: 'fran@quimica.com', type: 'teacher', active: true},
-    {name: 'Suissa', email: 'jnascimento@gmail.com', type: 'teacher', active: false},
-  ];
+		{name: 'Gabriel Kalani', email: 'gabrielsilva1956@gmail.com', type: 'student', active: true},
+		{name: 'Diego Ferreira', email: 'tuchedsf@gmail.com', type: 'student', active: false},
+		{name: 'Franciele Pereira', email: 'fran@quimica.com', type: 'teacher', active: true},
+		{name: 'Jean Suissa', email: 'jnascimento@gmail.com', type: 'teacher', active: true},
+	];
 
 	function getKeyLength() {
 		return Object.keys(angular.copy(vm.users[0])).length;
@@ -112,11 +113,11 @@ function UserController($routeParams) {
 	};
 
 	vm.users = [
-    {name: 'Gabriel Kalani', email: 'gabrielsilva1956@gmail.com', type: 'student', active: true},
-    {name: 'Diego Ferreira', email: 'tuchedsf@gmail.com', type: 'student', active: false},
-    {name: 'Franciele Pereira', email: 'fran@quimica.com', type: 'teacher', active: true},
-    {name: 'Suissa', email: 'jnascimento@gmail.com', type: 'teacher', active: false},
-  ];
+		{name: 'Gabriel Kalani', email: 'gabrielsilva1956@gmail.com', type: 'student', active: true},
+		{name: 'Diego Ferreira', email: 'tuchedsf@gmail.com', type: 'student', active: false},
+		{name: 'Franciele Pereira', email: 'fran@quimica.com', type: 'teacher', active: true},
+		{name: 'Jean Suissa', email: 'jnascimento@gmail.com', type: 'teacher', active: true},
+	];
 
 	function getKeyLength() {
 		return Object.keys(angular.copy(vm.users[0])).length;
@@ -165,4 +166,24 @@ function UserController($routeParams) {
 		vm.users = users;
 		vm.editing = false;
 	}
+}
+
+function UserGitHubController($http){
+	const vm = this;
+
+	const user = 'ednilsonamaral';
+	const url = 'https://api.github.com/users/'+user;
+	const method = 'GET';
+
+	$http({
+		url: url,
+		method: method
+	})
+	.success(function(data){
+		console.log('Data: ', data);
+		vm.user = data;
+	})
+	.error(function(err){
+		console.log('Erro: ', err);
+	})
 }
