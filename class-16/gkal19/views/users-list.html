@@ -5,7 +5,7 @@
         <tr>
             <th colspan="4">
                 <label>
-                    <input type="search" name="search" placeholder="Busque..." data-ng-model="searchUser">
+                    <input data-ng-model="searchUser" data-ng-model-options="User.modelOptions" placeholder="Buscar">
                 </label>
             </th>
         </tr>
@@ -25,7 +25,7 @@
                 <label for="user-{{$index}}"></label>
             </td>
 
-            <td><a href="#/users/{{user.email}}">{{ user.name }}</a></td>
+            <td><a href="/users/{{$index}}">{{ user.name }}</a></td>
             <td>{{ user.email }}</td>
 
             <td>
@@ -35,6 +35,6 @@
     </tbody>
 </table>
 
-<button data-ng-click="User.orderByName()" class="btn btn-large animate black waves-effect waves-light col s12" type="submit" name="action">Ordenar Nome</button>
-<button data-ng-click="User.orderByEmail()" class="btn btn-large animate black waves-effect waves-light col s12" type="submit" name="action">Ordenar Email</button>
+<button data-ng-click="User.orderByName()" class="btn btn-large animate black waves-effect waves-light col s12" type="submit" name="action">Ordenar nome's</button>
+<button data-ng-click="User.orderByEmail()" class="btn btn-large animate black waves-effect waves-light col s12" type="submit" name="action">Ordenar email's</button>
 <button data-ng-click="User.remove(User.users)" class="btn btn-large red waves-effect waves-light col s12" type="submit" name="action">Remover</button>
