@@ -1,0 +1,11 @@
+<h2>Dados do user</h2>
+
+<p>Buscar user: {{ UserDetails.routeParams.email }}</p>
+
+<p class="card-panel">
+	Nome: {{ UserDetails.users[UserDetails.routeParams.users.email].name }}
+
+	<br>
+
+	Email: {{ UserDetails.users[UserDetails.routeParams.users.email].email }}
+</p>
