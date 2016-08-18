@@ -1,0 +1,23 @@
+<h2 class="h2">Dados do user</h2>
+
+<div class="col s12 m7">
+	<div class="card">
+		<div class="card-image">
+			<img src="{{ UserGitHub.user.avatar_url }}" alt="Avatar do github do {{ UserGitHub.user.name }}" />
+			<span class="card-title">{{ UserGitHub.user.name }}</span>
+		</div>
+
+		<div class="card-content">
+			<p><strong>Nome: </strong> {{ UserGitHub.user.name }}</p>
+			<p><strong>Username: </strong> {{ UserGitHub.user.login }}</p>
+			<p><strong>Usuário desde: </strong> {{ UserGitHub.user.created_at }}</p>
+			<p><strong>Repositórios Públicos: </strong> {{ UserGitHub.user.public_repos }}</p>
+			<p><strong>Localização: </strong> {{ UserGitHub.user.location }}</p>
+		</div>
+
+		<div class="card-action">
+			<a href="{{ UserGitHub.user.blog }}">Blog</a>
+			<a href="mailto:{{ UserGitHub.user.email }}">Email</a>
+		</div>
+	</div>
+</div>
