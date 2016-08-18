@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en" data-ng-app="BeMEAN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Be MEAN</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-ng-controller="UserController as User">
+    <section class="row wrapper">
+        <h1 data-ng-class="User.tituloStyleClass">{{ User.titulo }}</h1>
+
+        <select data-ng-options="user.email as user.name for user in User.users" data-ng-model="User.selected">
+            <option value="">Escolha um usuário</option>
+        </select>
+
+        <p>{{User.selected}}</p>
+
+        <p class="col s12">
+            <label>
+                <input type="text" data-ng-model="User.form.name" placeholder="Name" data-ng-model-options="{ getterSetter: true }">
+            </label>
+
+            <br>
+
+            <label>
+                <input type="email" data-ng-model="User.form.email" placeholder="Email" data-ng-model-options="{ allowInvalid: true }">
+            </label>
+
+            <label>
+                <input type="TIME" data-ng-model="User.form.date" data-ng-model-options="{ timezone: 'UTC' }">
+            </label>
+        </p>
+
+        <button data-ng-disabled="User.editing" data-ng-click="User.add(User.form)" class="btn btn-large green waves-effect waves-light col s12" type="submit" name="action">Add</button>
+        <button data-ng-disabled="!User.editing" data-ng-click="User.save(User.form)" class="btn btn-large animate blue waves-effect waves-light col s12" type="submit" name="action">Save</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4">
+                        <label>
+                            <input data-ng-model="searchUser" data-ng-model-options="{ updateOn: 'blur default', debounce: { default: 3000, blur: 0} }" placeholder="Search">
+                        </label>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr data-ng-class="{bold: !user.selecionado, strike: user.selecionado}" class="item" data-ng-repeat="user in User.users | filter:searchUser | orderBy:User.predicate:User.reverse ">
+                    <td>
+                        <input type="checkbox" id="user-{{$index}}" ng-model="user.selecionado" />
+                        <label for="user-{{$index}}"></label>
+                    </td>
+
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+
+                    <td>
+                        <button data-ng-click="User.edit(user, $index)" class="btn blue waves-effect waves-light col s12" type="submit" name="action">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
