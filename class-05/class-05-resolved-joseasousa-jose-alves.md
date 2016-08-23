@@ -1,4 +1,4 @@
-# AngularJS - Aula 04 - Exercício
+# AngularJS - Aula 05 - Exercício
 **user:** [joseasousa](https://github.com/joseasousa/)  
 **autor:** Jose Alves De Sousa Neto
 
