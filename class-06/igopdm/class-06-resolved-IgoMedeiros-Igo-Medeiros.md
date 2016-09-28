@@ -1,4 +1,4 @@
-# AngularJS 1.5.x - Aula 06 - Exercício  
+# AngularJS 1.5.8 - Aula 06 - Exercício  
 **user:** [igomedeiros](https://github.com/igomedeiros)  
 **autor:** Igo Medeiros
 
