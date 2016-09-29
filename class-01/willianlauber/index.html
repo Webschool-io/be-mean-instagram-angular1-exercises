@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html data-ng-app="Aula1">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <title>{{title}}</title>
+    <style>
+    .form-group {
+      color:white;
+      background: navy;
+      padding: 40px;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 4px;
+      box-shadow: 0 1px 10px 4px blue;
+    }
+    </style>
+  </head>
+
+  <body class="container">
+        <form>
+          <div class="form-group">
+            <label for="titulo">Titulo: </label>
+            <input type="input" value="" name="titulo" placeholder="Titulo" ng-model="title"></input> <br>
+            <label for="name">Nome: </label>
+            <input type="input" value="" ng-model="nome" name="some" placeholder="Nome"></input> <br>
+            <label for="sobrenome">Sobrenome: </label>
+            <input type="input" value="" ng-model="sobrenome" name="sobrenome" placeholder="Sobrenome"></input> <br>
+            <label for="pais">Pais: </label>
+            <input type="input" value="" ng-model="pais" name="pais" placeholder="Pais"></input> <br>
+          </div>
+        </form>
+        <p class="text-info">Olá {{nome}} {{sobrenome}} como é morar no/a {{pais}} </p>
+
+        <script>
+          angular.module("Aula1", []);
+        </script>
+  </body>
+</html>
