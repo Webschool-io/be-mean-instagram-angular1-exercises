@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html data-ng-app="meuapp">
+  <head>
+    <meta charset="utf-8">
+    <title>aula2 - filtros</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script-->
+  </head>
+  <body>
+    <fieldset class="pure-group">
+        <label for="idade">Idade:</label>
+        <input type="number" maxlength="3" data-ng-model="idade">
+        {{idade | maioridade}}
+    </fieldset>
+    <script>
+        angular.module('meuapp', [])
+          .filter('maioridade',function() {
+            return function(text) {
+              if(text < 18)
+               return "Você não atingiu a maioridade.";
+              if(text >= 18)
+               return "Você é maior de idade.";
+             }
+           });
+    </script>
+  </body>
+</html>
