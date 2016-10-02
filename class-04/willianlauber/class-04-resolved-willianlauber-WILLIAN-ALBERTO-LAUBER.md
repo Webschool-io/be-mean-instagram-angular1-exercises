@@ -1,7 +1,7 @@
 # AngularJS 1.5.x - Aula 04 - Exercício  
 **user:** [willianlauber](https://github.com/willianlauber)  
 **autor:** Willian Alberto Lauber
-**date:**
+**date:** 1475439731
 
 ## Adicionar mais 1 campo em todos os Controllers e utilizar ele em orderBy.
 
