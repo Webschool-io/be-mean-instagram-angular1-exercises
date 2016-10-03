@@ -1,0 +1,228 @@
+# AngularJS 1.5.x - Aula 05 - Exercício  
+**user:** [willianlauber](https://github.com/willianlauber)  
+**autor:** Willian Lauber  
+**data:** 1475514652
+
+
+## Criar uma função que para ordenar uma tabela a partir de uma coluna, clicando na sua tr > th, ordenando pelo campo da coluna.
+
+## Criar mais 1 Controller para Teachers com seu form para adição, listagem (defina um Array inicial) com a ordenação do exercício anterior, filtro filter e também o use o seu filtro criado na segunda aula.
+
+
+```html
+<!DOCTYPE html>
+<!-- W AL L-->
+<html data-ng-app="meuapp">
+    <head >
+        <meta charset="utf-8">
+        <title>aula4</title>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+        <style>
+            body {
+                background-color: #2f2f2f;
+                color: chartreuse;
+            }
+            button {
+    background-color: chartreuse; /* about Green and Yellow */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+        </style>
+    </head>
+    <body>
+        <div data-ng-controller="Controllerx as Teach">
+            <label>nome:
+                <input type="text" name="name" data-ng-model="form.professor.name"></input>
+            </label>
+            <label>disciplina:
+                <input type="text" name="name" data-ng-model="form.professor.disciplina"></input>
+            </label>
+            <label>carga horaria:
+                <input type="text" name="name" data-ng-model="form.professor.carga_horaria"></input>
+            </label>
+
+            <button type="text" data-ng-click="Teach.add(form.professor)" name="button">ADD</button>
+            <br>
+            <label>
+                Pesquisar:
+                <input data-ng-model="frase2" type="text" placeholder"busque algo"></input>
+            </label>
+            {{frase2 | filtro}}
+            <br data-ng-init=predicate : "Teach.predicate='carga_horaria'">
+            <!--{{professor.nome | uppercase}}{{professor.disciplina | filtro | uppercase}}-->
+            <table>
+                <thead>
+                    <tr>
+                        <th data-ng-repeat="(key, value) in Teach.professores[0]">
+                          <a href="" data-ng-click="Teach.ordenar('key')">
+                            {{key}}
+                            </a>
+                          </th>
+
+                    </tr>
+                    <tbody>
+                        <tr data-ng-repeat="professor in Teach.professores | orderBy:Teach.predicate:Teach.reverse | filter: frase2">
+                            <th data-ng-repeat="(key, value) in professor">
+                                {{value  | filtro }}
+                            </th>
+                        </tr>
+                    </tbody>
+                </thead>
+            </table>
+
+            <div data-ng-controller="BeControlled as Usuarios">
+                <label>nome:
+                    <input type="text" name="name" data-ng-model="form.user.name"></input>
+                </label>
+                <label>disciplina:
+                    <input type="email" name="name" data-ng-model="form.user.email"></input>
+                </label>
+                <label>carga horaria:
+                    <input type="text" name="name" data-ng-model="form.user.ativo"></input>
+                </label>
+
+                <button type="text" data-ng-click="Usuarios.add(form.user)" name="button">ADD</button>
+                <br>
+
+                <br>
+                <label>Busca:
+                    <input data-ng-model="frase" type="text" placeholder"busque algo"></input>
+                </label>
+                {{frase | filtro}}
+                <br data-ng-init=predicate : "Usuarios.predicate='ativo'">
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-ng-repeat="(key, value) in Usuarios.users[0]" >
+                              <a href="" data-ng-click="Usuarios.ordenar('key')">{{ key }}</a>
+                            </th>
+                        </tr>
+                        <tbody>
+                            <tr data-ng-repeat="user in Usuarios.users | orderBy:Usuarios.predicate:Usuarios.reverse | filter:frase">
+                                <th data-ng-repeat="(key, value) in user">
+                                    {{value }}
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <script>
+                angular.module("meuapp", []).filter("filtro", function() {
+                    return function(text) {
+                        if (text) {
+                            if (text.length <= 10) {
+                                return text;
+                            }
+                            return String(text).substring(0, 12) + "...";
+                        }
+                    }
+                }).controller("Controllerx", controllerx).controller("BeControlled", BeControlled).filter("saudar",function() {
+                      return function(text) {
+                        var h = text.getHours();
+                        if(h >= 0 && h <= 12)
+                         return "Bom dia.";
+                        else if(h >= 12 && h <= 18)
+                          return "Boa tarde.";
+                        else if(h >= 18 && h <= 23)
+                          return "Boa noite.";
+                       }
+                     });
+                function BeControlled() {
+
+                    var vm = this;
+                    vm.titulo = "Be Mean - usuarios";
+                    vm.users = [
+                        {
+                            name: "João",
+                            email: "joao@apostolo.com",
+                            ativo: "não"
+                        }, {
+                            name: "Judas",
+                            email: "judas@apostolo.com",
+                            ativo: "não"
+                        }, {
+                            name: "Jeremias",
+                            email: "jeremias@profeta.com",
+                            ativo: "não"
+                        }, {
+                            name: "Be Mean",
+                            email: "suissa@manoveio.com",
+                            ativo: "sim"
+                        }
+                    ];
+                    vm.add = add;
+                    function add() {
+                        vm.users.push({name: 'exemplonome', email: 'njk@jko.com', ativo: 'não'})
+                    }
+                    vm.ordenar = ordenar;
+                    function ordenar(key){
+                        vm.predicate = key;
+                        vm.reverse = !vm.reverse;
+                    }
+                };
+                function controllerx() {
+                    var vm = this;
+                    vm.titulo = "BIG teachers";
+                    vm.professores = [
+                        {
+                            nome: "Christiano Cavalcante",
+                            disciplina: "Direitos, Portuges, Matematica, Ingles",
+                            carga_horaria: "2500h",
+                            horario_inicio: 20
+                        }, {
+                            nome: "Renato Aquino",
+                            disciplina: "Portugues",
+                            carga_horaria: "200h",
+                            horario_inicio: 18
+                        }, {
+                            nome: "Rodrigo Silva",
+                            disciplina: "Arqueologia",
+                            carga_horaria: "100h",
+                            horario_inicio: 23
+                        }, {
+                            nome: "Olavo de Carvalho",
+                            disciplina: "Filosofia",
+                            carga_horaria: "450h",
+                            horario_inicio: 12
+                        }, {
+                            nome: "Marcio Barbosa",
+                            disciplina: "Matematica",
+                            carga_horaria: "100h",
+                            horario_inicio: 10
+                        }, {
+                            nome: "Régis Cortez",
+                            disciplina: "Matematica, Fisica",
+                            carga_horaria: "300h",
+                            horario_inicio: 02
+                        }, {
+                            nome: "Suissa",
+                            disciplina: "BeMean",
+                            carga_horaria: "240h",
+                            horario_inicio: 12
+                        }
+                    ];
+                    vm.add = add;
+                    function add(professor) {
+                        vm.professores.push(professor)
+                    }
+                    vm.ordenar = ordenar;
+                    function ordenar(campo){
+                      vm.predicate = campo;
+                      vm.reverse = !vm.reverse;
+                    }
+                };
+            </script>
+        </body>
+    </html>
+
+```
