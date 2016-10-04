@@ -45,10 +45,25 @@
                     <tr>
 
                         <th></th>
-                        <th data-ng-repeat="(key, value) in Teach.professores[0]">
-                            <a href="" data-ng-click="Teach.ordenar('key')">
-                                {{key}}
-                            </a>
+
+                        <th>
+                            <a href="" data-ng-click="Teach.ordenar('nome')">
+                                Name</a>
+                        </th>
+                        <th>
+                            <a href="" data-ng-click="Teach.ordenar('disciplina')">
+                                Disciplina</th>
+                            <th>
+                                <a href="" data-ng-click="Teach.ordenar('carga_horaria')">
+                                    Horas
+                                </th>
+                                <th>
+                                    <a href="" data-ng-click="Teach.ordenar('horario_inicio')">
+                                        Inicio
+                                    </th>
+                                </a>
+
+                            </tr>
                         </th>
 
                     </tr>
@@ -58,9 +73,10 @@
                                 <input type="checkbox" id="professor-{{$index}}" ng-model="professor.selecionado" name="name" value=""/>
                                 <label for="professor-{{$index}}"></label>
                             </th>
-                            <th data-ng-repeat="(key, value) in professor">
-                                {{value  | filtro }}
-                            </th>
+                            <td>{{ professor.nome }}</td>
+                            <td>{{ professor.disciplina }}</td>
+                            <td>{{ professor.carga_horaria }}</td>
+                            <td>{{ professor.horario_inicio }}</td>
                         </tr>
                     </tbody>
                 </thead>
