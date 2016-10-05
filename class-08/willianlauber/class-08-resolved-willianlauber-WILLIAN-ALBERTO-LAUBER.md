@@ -217,14 +217,15 @@
             //   });
             // }
 
-                vm.remove = remove;
-                function remove(professor) {
-                    professores.forEach(function(element, index) {
-                        if (professores[index].selecionado)
-                            professores.splice(professores.indexOf(element), 1);
-                        }
-                    )
-                }
+
+                            vm.remove = remove;
+                            function remove(professores) {
+                                professores.forEach(function(element, index) {
+                                    if (professores[index].selecionado)
+                                        professores.splice(professores.indexOf(element), 1);
+                                    }
+                                )
+                            }
             };
         </script>
     </body>

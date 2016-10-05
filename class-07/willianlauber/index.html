@@ -18,7 +18,7 @@
     </head>
     <body class="row wraper">
         <div data-ng-controller="Controllerx as Teach">
-          <h1>{{Teach.titulo}}</h1>
+            <h1>{{Teach.titulo}}</h1>
             <label>nome:
                 <input type="text" placeholder="name" data-ng-model="Teach.form.nome"></input>
             </label>
@@ -81,17 +81,16 @@
                             <td>{{ professor.carga_horaria }}</td>
                             <td>{{ professor.horario_inicio }}</td>
                             <td>
-                               <button data-ng-click="Teach.edit(professor, $index)" class="btn blue waves-effect waves-light col s12" type="submit" name="action">
-                                 Edit
-                               </button>
-                             </td>
+                                <button data-ng-click="Teach.edit(professor, $index)" class="btn blue waves-effect waves-light col s12" type="submit" name="action">
+                                    Edit
+                                </button>
+                            </td>
                         </tr>
                     </tbody>
                 </thead>
             </table>
 
             <button class="btn btn-large red waves-effect waves-light  col s12" type="text" data-ng-click="Teach.remove(Teach.professores)" name="button">remove</button>
-
 
         </div>
         <script>
@@ -107,11 +106,11 @@
             }).controller("Controllerx", controllerx).filter("saudar", function() {
                 return function(text) {
                     var h = text.getHours();
-                    if (h >= 0 && h <= 12)
+                    if (h >= 0 && h <= 12) 
                         return "Bom dia.";
-                    else if (h >= 12 && h <= 18)
+                    else if (h >= 12 && h <= 18) 
                         return "Boa tarde.";
-                    else if (h >= 18 && h <= 23)
+                    else if (h >= 18 && h <= 23) 
                         return "Boa noite.";
                     }
                 });
@@ -166,38 +165,38 @@
                     vm.predicate = campo;
                     vm.reverse = !vm.reverse;
                 }
-            vm.edit = edit;
-            function edit(professor, index){
-              vm.form = angular.copy(professor);
-              vm.form.index = index;
-            }
-
-            vm.save = save;
-            function save(professor){
-              var professores = vm.professores.map(function(el, i){
-                  if(i === professor.index){
-                    delete professor.index;
-                    return professor;
-                  }
-                  return el;
-
-              });
-              vm.professores = professores;
-            }
-
-            vm.saveWithForEach = saveWithForEach;
-            function saveWithForEach(professor) {
-              vm.professores.forEach(function(el, index) {
-                if(professor.index === index) {
-                  vm.professores.splice(professor.index,1,professor);
+                vm.edit = edit;
+                function edit(professor, index) {
+                    vm.form = angular.copy(professor);
+                    vm.form.index = index;
                 }
-              });
-            }
+
+                vm.save = save;
+                function save(professor) {
+                    var professores = vm.professores.map(function(el, i) {
+                        if (i === professor.index) {
+                            delete professor.index;
+                            return professor;
+                        }
+                        return el;
+
+                    });
+                    vm.professores = professores;
+                }
+
+                vm.saveWithForEach = saveWithForEach;
+                function saveWithForEach(professor) {
+                    vm.professores.forEach(function(el, index) {
+                        if (professor.index === index) {
+                            vm.professores.splice(professor.index, 1, professor);
+                        }
+                    });
+                }
 
                 vm.remove = remove;
-                function remove(professor) {
+                function remove(professores) {
                     professores.forEach(function(element, index) {
-                        if (professores[index].selecionado)
+                        if (professores[index].selecionado) 
                             professores.splice(professores.indexOf(element), 1);
                         }
                     )
