@@ -23,53 +23,166 @@
         <script src="https://code.angularjs.org/1.5.8/angular-animate.min.js"></script>
 
         <style>
-        .wraper {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .blue {
-            transition: all linear 0.3s;
-        }
-        .green {
-            transition: ease-in-out 0.6s;
-        }
-        .ng-hide {
-            height: 0;
-        }
-        .item.ng-enter {
-            -webkit-transition: all linear 4s;
-            transition: all linear 4s;
-        }
-        .item.ng-enter {
-            opacity: 0;
-        }
-        .item.ng-enter.ng-enter-active {
-            opacity: 1;
-        }
-
-        .item.ng-leave {
-            -webkit-transition: all linear 1s;
-            transition: all linear 1s;
-        }
-        .item.ng-leave {
-            opacity: 1;
-        }
-        .item.ng-leave.ng-leave-active {
-            opacity: 0;
-        }
-
-
-            //move
-
-            .item.ng-move{
-              transition: all linear 1s;
-              -webkit-transition: all linear 1s;
-              opacity: 0;
+            .wraper {
+                max-width: 600px;
+                margin: 0 auto;
             }
-            .item.ng-move.ng-move-active{
-              opacity: 1;
-              }
+            .blue {
+                transition: all linear 0.3s;
+            }
+            .green {
+                transition: ease-in-out 0.6s;
+            }
+            .ng-hide {
+                height: 0;
+            }
+            .item.ng-enter {
+              animation-name: muda, super-green;
+              animation-duration: 1s;
+            }
+            .item.ng-enter {
+              animation-name: muda, super-green;
+              animation-duration: 1s;
+            }
+            .item.ng-enter.ng-enter-active {
+              animation-name: muda, super-green;
+              animation-duration: 1s;
+          }
 
+            .item.ng-leave {
+                -webkit-transition: all linear 1s;
+                transition: all linear 1s;
+            }
+            .item.ng-leave {
+              animation-name: muda, super-red;
+              animation-duration: 1s;
+            }
+
+            .item.ng-leave.ng-leave-active {
+              animation-name: muda, super-red;
+              animation-duration: 1s;
+          }
+            .item.ng-move {
+                animation-name: muda;
+                animation-duration: 5s;
+
+            }
+            item.ng-move {
+                animation-name: muda;
+                animation-duration: 5s;
+            }
+            .item.ng-move.ng-move-active {
+                animation-name: muda, super-rainbow;
+                animation-duration: 1s;
+            }
+
+            /* KEYFRAMES */
+            @-webkit-keyframes muda {
+                0%,
+                100% {
+                    opacity: 0;
+                }
+                10%,
+                90% {
+                    opacity: 0.8;
+                }
+            }
+            @keyframes muda {
+                0%,
+                100% {
+                    opacity: 0;
+                }
+                10%,
+                90% {
+                    opacity: 0.8;
+                }
+            }
+            @-webkit-keyframes super-rainbow {
+                0% {
+                    background: yellow;
+                    opacity: 0;
+                }
+                40% {
+                    background: #ffcd00;
+                    opacity: 0.4;
+                }
+                100% {
+                    background: yellow;
+                    opacity: 1;
+                }
+            }
+            @-moz-keyframes super-rainbow {
+                0% {
+                    background: yellow;
+                    opacity: 0;
+                }
+                40% {
+                    background: #ffcd00;
+                    opacity: 0.4;
+                }
+                100% {
+                    background: yellow;
+                    opacity: 1;
+                }
+            }
+
+            @-webkit-keyframes super-red {
+                0% {
+                    color: red;
+                    opacity: 1;
+                }
+                40% {
+                    color: red;
+                    opacity: 0.6;
+                }
+                100% {
+                    color: red;
+                    opacity: 0.1;
+                }
+            }
+            @-moz-keyframes super-red {
+                0% {
+                    color: red;
+                    opacity: 1;
+                }
+                40% {
+                    color: red;
+                    opacity: 0.6;
+                }
+                100% {
+                    color: red;
+                    opacity: 0.1;
+                }
+            }
+
+                        @-webkit-keyframes super-green {
+                            0% {
+                                color: green;
+                                opacity: 0;
+                            }
+                            40% {
+                                color: green;
+                                opacity: 0.6;
+                            }
+                            100% {
+                                color: grenn;
+                                opacity: 1;
+                            }
+                        }
+                        @-moz-keyframes super-red {
+                            0% {
+                                color: green;
+                                opacity: 0.1;
+                            }
+                            40% {
+                                color: green;
+                                opacity: 0.6;
+                            }
+                            100% {
+                                color: green;
+                                opacity: 1;
+                            }
+                        }
 
         </style>
     </head>
@@ -102,7 +215,7 @@
             <!--{{professor.nome | uppercase}}{{professor.disciplina | filtro | uppercase}}-->
             <table>
                 <thead>
-                    <tr>
+                    <tr class="item">
 
                         <th></th>
 
@@ -216,7 +329,7 @@
                 ];
                 vm.add = add;
                 function add(professor) {
-                    vm.professores.push(professor)
+                    vm.professores.push(professor);
                     vm.form = {};
                 }
                 vm.ordenar = ordenar;
@@ -245,13 +358,12 @@
                 // vm.saveWithForEach = saveWithForEach; function saveWithForEach(professor) {   vm.professores.forEach(function(el, index) {     if(professor.index === index) {       vm.professores.splice(professor.index,1,professor);     }   }); }
                 vm.remove = remove;
                 function remove(users) {
-                                        vm.professores = vm.professores.filter(function(el) {
-                                            return !el.selecionado
-                                        })
-                                    }
+                    vm.professores = vm.professores.filter(function(el) {
+                        return !el.selecionado
+                    })
+                }
             };
         </script>
     </body>
 </html>
-
 ```
