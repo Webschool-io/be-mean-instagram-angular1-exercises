@@ -1,0 +1,369 @@
+# AngularJS - Aula 09 - Exercício  
+**User:** [willianlauber](https://github.com/willianlauber)  
+**Autor:** Willian Alberto Lauber
+**Date:** 1475693543
+
+##  Criar uma animação melhor com `keyframes` para entrada do usuário na lista.
+##  Criar uma animação melhor com `keyframes` para saída do usuário na lista.
+##  Criar uma animação melhor com `keyframes` para busca do usuário na lista.
+
+[Archive Index.html]
+
+```html
+<!DOCTYPE html>
+<!-- W AL L-->
+<html data-ng-app="meuapp">
+    <head >
+        <meta charset="utf-8">
+        <title>aula 9</title>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+        <script src="https://code.angularjs.org/1.5.8/angular-animate.min.js"></script>
+
+        <style>
+            .wraper {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            .blue {
+                transition: all linear 0.3s;
+            }
+            .green {
+                transition: ease-in-out 0.6s;
+            }
+            .ng-hide {
+                height: 0;
+            }
+            .item.ng-enter {
+              animation-name: muda, super-green;
+              animation-duration: 1s;
+            }
+            .item.ng-enter {
+              animation-name: muda, super-green;
+              animation-duration: 1s;
+            }
+            .item.ng-enter.ng-enter-active {
+              animation-name: muda, super-green;
+              animation-duration: 1s;
+          }
+
+            .item.ng-leave {
+                -webkit-transition: all linear 1s;
+                transition: all linear 1s;
+            }
+            .item.ng-leave {
+              animation-name: muda, super-red;
+              animation-duration: 1s;
+            }
+
+            .item.ng-leave.ng-leave-active {
+              animation-name: muda, super-red;
+              animation-duration: 1s;
+          }
+            .item.ng-move {
+                animation-name: muda;
+                animation-duration: 5s;
+
+            }
+            item.ng-move {
+                animation-name: muda;
+                animation-duration: 5s;
+            }
+            .item.ng-move.ng-move-active {
+                animation-name: muda, super-rainbow;
+                animation-duration: 1s;
+            }
+
+            /* KEYFRAMES */
+            @-webkit-keyframes muda {
+                0%,
+                100% {
+                    opacity: 0;
+                }
+                10%,
+                90% {
+                    opacity: 0.8;
+                }
+            }
+            @keyframes muda {
+                0%,
+                100% {
+                    opacity: 0;
+                }
+                10%,
+                90% {
+                    opacity: 0.8;
+                }
+            }
+            @-webkit-keyframes super-rainbow {
+                0% {
+                    background: yellow;
+                    opacity: 0;
+                }
+                40% {
+                    background: #ffcd00;
+                    opacity: 0.4;
+                }
+                100% {
+                    background: yellow;
+                    opacity: 1;
+                }
+            }
+            @-moz-keyframes super-rainbow {
+                0% {
+                    background: yellow;
+                    opacity: 0;
+                }
+                40% {
+                    background: #ffcd00;
+                    opacity: 0.4;
+                }
+                100% {
+                    background: yellow;
+                    opacity: 1;
+                }
+            }
+
+            @-webkit-keyframes super-red {
+                0% {
+                    color: red;
+                    opacity: 1;
+                }
+                40% {
+                    color: red;
+                    opacity: 0.6;
+                }
+                100% {
+                    color: red;
+                    opacity: 0.1;
+                }
+            }
+            @-moz-keyframes super-red {
+                0% {
+                    color: red;
+                    opacity: 1;
+                }
+                40% {
+                    color: red;
+                    opacity: 0.6;
+                }
+                100% {
+                    color: red;
+                    opacity: 0.1;
+                }
+            }
+
+                        @-webkit-keyframes super-green {
+                            0% {
+                                color: green;
+                                opacity: 0;
+                            }
+                            40% {
+                                color: green;
+                                opacity: 0.6;
+                            }
+                            100% {
+                                color: grenn;
+                                opacity: 1;
+                            }
+                        }
+                        @-moz-keyframes super-red {
+                            0% {
+                                color: green;
+                                opacity: 0.1;
+                            }
+                            40% {
+                                color: green;
+                                opacity: 0.6;
+                            }
+                            100% {
+                                color: green;
+                                opacity: 1;
+                            }
+                        }
+
+        </style>
+    </head>
+    <body class="row wraper">
+        <div data-ng-controller="Controllerx as Teach">
+            <h1>{{Teach.titulo}}</h1>
+            <label>nome:
+                <input type="text" placeholder="name" data-ng-model="Teach.form.nome"></input>
+            </label>
+            <label>disciplina:
+                <input type="text" placeholder="disciplina" data-ng-model="Teach.form.disciplina"></input>
+            </label>
+            <label>carga horaria:
+                <input type="text" placeholder="qtd horas" data-ng-model="Teach.form.carga_horaria"></input>
+            </label>
+            <label>horario de inicio:
+                <input type="text" placeholder="hora que começa" data-ng-model="Teach.form.horario_inicio"></input>
+            </label>
+
+            <button data-ng-hide="!Teach.Save_Oculto" class="btn btn-large green waves-effect waves-light  col s12" type="text" data-ng-click="Teach.add(Teach.form)" name="button">ADD</button>
+            <button data-ng-hide="Teach.Save_Oculto" data-ng-click="Teach.save(Teach.form)" class="btn btn-large blue waves-effect waves-light col s12">Save</button>
+
+            <br>
+            <label>
+                Pesquisar:
+                <input data-ng-model="frase2" type="text" placeholder"busque algo"></input>
+            </label>
+            {{frase2 | filtro}}
+            <br data-ng-init=predicate : "Teach.predicate='carga_horaria'">
+            <!--{{professor.nome | uppercase}}{{professor.disciplina | filtro | uppercase}}-->
+            <table>
+                <thead>
+                    <tr class="item">
+
+                        <th></th>
+
+                        <th>
+                            <a href="" data-ng-click="Teach.ordenar('nome')">
+                                Name</a>
+                        </th>
+                        <th>
+                            <a href="" data-ng-click="Teach.ordenar('disciplina')">
+                                Disciplina</th>
+                            <th>
+                                <a href="" data-ng-click="Teach.ordenar('carga_horaria')">
+                                    Horas
+                                </th>
+                                <th>
+                                    <a href="" data-ng-click="Teach.ordenar('horario_inicio')">
+                                        Inicio
+                                    </th>
+                                </a>
+
+                            </tr>
+                        </th>
+
+                    </tr>
+                    <tbody>
+                        <tr class="item" data-ng-repeat="professor in Teach.professores | orderBy:Teach.predicate:Teach.reverse | filter: frase2">
+                            <th>
+                                <input type="checkbox" id="professor-{{$index}}" ng-model="professor.selecionado" name="name" value=""/>
+                                <label for="professor-{{$index}}"></label>
+                            </th>
+                            <td>{{ professor.nome }}</td>
+                            <td>{{ professor.disciplina }}</td>
+                            <td>{{ professor.carga_horaria }}</td>
+                            <td>{{ professor.horario_inicio }}</td>
+                            <td>
+                                <button data-ng-hide="!Teach.Save_Oculto" data-ng-click="Teach.edit(professor, $index)" class="btn blue waves-effect waves-light col s12" type="submit" name="action">
+                                    Edit
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </thead>
+            </table>
+
+            <button class="btn btn-large red waves-effect waves-light  col s12" type="text" data-ng-click="Teach.remove(Teach.professores)" name="button">remove</button>
+
+        </div>
+        <script>
+            angular.module("meuapp", ['ngAnimate']).filter("filtro", function() {
+                return function(text) {
+                    if (text) {
+                        if (text.length <= 10) {
+                            return text;
+                        }
+                        return String(text).substring(0, 12) + "...";
+                    }
+                }
+            }).controller("Controllerx", controllerx).filter("saudar", function() {
+                return function(text) {
+                    var h = text.getHours();
+                    if (h >= 0 && h <= 12)
+                        return "Bom dia.";
+                    else if (h >= 12 && h <= 18)
+                        return "Boa tarde.";
+                    else if (h >= 18 && h <= 23)
+                        return "Boa noite.";
+                    }
+                });
+
+            function controllerx() {
+                var vm = this;
+                vm.titulo = "BIG teachers";
+                vm.Save_Oculto = true;
+                vm.professores = [
+                    {
+                        nome: "Christiano Cavalcante",
+                        disciplina: "Direitos, Portuges, Matematica, Ingles",
+                        carga_horaria: "2500h",
+                        horario_inicio: 20
+                    }, {
+                        nome: "Renato Aquino",
+                        disciplina: "Portugues",
+                        carga_horaria: "200h",
+                        horario_inicio: 18
+                    }, {
+                        nome: "Rodrigo Silva",
+                        disciplina: "Arqueologia",
+                        carga_horaria: "100h",
+                        horario_inicio: 23
+                    }, {
+                        nome: "Olavo de Carvalho",
+                        disciplina: "Filosofia",
+                        carga_horaria: "450h",
+                        horario_inicio: 12
+                    }, {
+                        nome: "Marcio Barbosa",
+                        disciplina: "Matematica",
+                        carga_horaria: "100h",
+                        horario_inicio: 10
+                    }, {
+                        nome: "Régis Cortez",
+                        disciplina: "Matematica, Fisica",
+                        carga_horaria: "300h",
+                        horario_inicio: 02
+                    }, {
+                        nome: "Suissa",
+                        disciplina: "BeMean",
+                        carga_horaria: "240h",
+                        horario_inicio: 12
+                    }
+                ];
+                vm.add = add;
+                function add(professor) {
+                    vm.professores.push(professor);
+                    vm.form = {};
+                }
+                vm.ordenar = ordenar;
+                function ordenar(campo) {
+                    vm.predicate = campo;
+                    vm.reverse = !vm.reverse;
+                }
+                vm.edit = edit;
+                function edit(professor, index) {
+                    vm.form = angular.copy(professor);
+                    vm.form.index = index;
+                    vm.Save_Oculto = !vm.Save_Oculto;
+                }
+                vm.save = save;
+                function save(professor) {
+                    var professores = vm.professores.map(function(el, i) {
+                        if (i === professor.index) {
+                            delete professor.index;
+                            return professor;
+                        }
+                        return el;
+                    });
+                    vm.professores = professores;
+                    vm.Save_Oculto = true;
+                }
+                // vm.saveWithForEach = saveWithForEach; function saveWithForEach(professor) {   vm.professores.forEach(function(el, index) {     if(professor.index === index) {       vm.professores.splice(professor.index,1,professor);     }   }); }
+                vm.remove = remove;
+                function remove(users) {
+                    vm.professores = vm.professores.filter(function(el) {
+                        return !el.selecionado
+                    })
+                }
+            };
+        </script>
+    </body>
+</html>
+```
