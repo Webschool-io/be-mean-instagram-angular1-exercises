@@ -1,10 +1,10 @@
 # AngularJS 1 - Aula 01 - Exercício
 
-Nome: Amanda Vilela
+Nome: Paulo Rodrigues
 
-Github: amandavilela
+Github: [paulinhoerry](https://github.com/paulinhoerry)
 
-Data: 03/07/2016 - 17:18
+Data: 03/11/2016
 
 ## 1 - Explique qual é a definição de MVC, MVVM e MVP
 
@@ -12,15 +12,15 @@ Data: 03/07/2016 - 17:18
 
 #### Model
 
-Onde ficam os dados da aplicação, responsável pela leitura/escrita de dados e suas validações.
+Manipula os dados da aplicação.
 
 #### View
 
-Onde os dados do Model são exibidos.
+Responsável pela interação com o usuário e exibição dos dados. 
 
 #### Controller
 
-Recebe todas as requisições do usuário e manipula os dados que ficam no Model.
+Receber os eventos disparado pelo usuário e manipula os dados que ficam no Model.
 
 ### MVVM (Model/View/ViewModel)
 
@@ -30,14 +30,14 @@ Contém a lógica de negócios e os dados.
 
 #### View
 
-Define a aparência/estrutura exibida na tela.
+É o elemento visual.
 
 #### ViewModel
 
 Disponibiliza para a View uma lógica de apresentação.
 
 
-### MVVM (Model/View/Presenter)
+### MVP (Model/View/Presenter)
 
 #### Model
 
@@ -53,7 +53,7 @@ Ligação entre View e Model, atualiza a View quando o Model é alterado e sincr
 
 ## 2 - Crie uma aplicação com um nome e um form onde os dados colocados neles sejam mostrados logo abaixo, formatados.
 
-```
+```html
 <input type="text" name="email" data-ng-model="nome" placeholder="Nome">
 
 <input type="text" name="nome" data-ng-model="email" placeholder="E-mail">
@@ -63,7 +63,6 @@ Ligação entre View e Model, atualiza a View quando o Model é alterado e sincr
 
 </form>
 
-<strong>Dados</strong>
 <p>Nome: {{ nome }}</p>
 <p>E-mail: {{ email }}</p>
 <p>Telefone: {{ telefone }}</p>
