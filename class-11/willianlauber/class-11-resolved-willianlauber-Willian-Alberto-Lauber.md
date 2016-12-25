@@ -1,7 +1,7 @@
 # AngularJS 1.5.x - Aula 11 - Exercício  
 **user:** [willianlauber](https://github.com/willianlauber)  
 **autor:** Willian Alberto Lauber  
-**data:**
+**data:** 1482682476
 
 
 ## Adicionar ordenação no `ng-options`.
