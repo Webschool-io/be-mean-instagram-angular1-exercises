@@ -1,0 +1,48 @@
+/*Reset*/
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/*Font*/
+
+@import url('https://fonts.googleapis.com/css?family=Reem+Kufi');
+
+/*Geral*/
+
+body{
+  background: #fafafa;
+  font-family: 'Reem Kufi', sans-serif;
+}
+p{
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+/*Box*/
+
+.box{
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: #fff;
+  margin: 2em auto;
+  max-width: 400px;
+  padding: 1.5em;
+  width: 100%;
+}
+.box__title{
+  color: #666;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.box__input{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 20px;
+  padding: 1em;
+  width: 100%;
+}
