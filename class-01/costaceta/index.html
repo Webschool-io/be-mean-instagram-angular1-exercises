@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Class 01 - Exercício 02</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-ng-app="class01">
+
+<div class="box">
+  <h2 class="box__title">Mensagem ouvidoria</h2>
+  <label for="nome">
+    <input class="box__input" type="text" placeholder="Nome" data-ng-model="nome">
+  </label>
+  <label for="email">
+    <input class="box__input" type="email" placeholder="E-mail" data-ng-model="email">
+  </label>
+  <label for="assunto">
+    <input class="box__input" type="text" placeholder="assunto" data-ng-model="assunto">
+  </label>
+  <label for="msn">
+    <textarea class="box__input" type="text" placeholder="Mensagem" data-ng-model="msn">
+    </textarea>
+  </label>
+</div>
+
+<div class="box">
+  <h2 class="box__title">
+    Dados fornecidos:
+  </h2>
+  <p><strong>Nome:</strong> {{ nome }}</p>
+  <p><strong>E-mail:</strong> {{ email }}</p>
+  <p><strong>Assunto:</strong> {{ assunto }}</p>
+  <p><strong>Mensagem:</strong> {{ msn }}</p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script>
+    angular.module('class01', []);
+</script>
+</body>
+</html>
