@@ -10,7 +10,7 @@ https://github.com/felipehfs
   do model passa antes pelo controller.
 
 # Exercício 2
-  """
+  ```
   <!DOCTYPE html>
   <html lang="pt-br" >
       <head>
@@ -51,4 +51,4 @@ https://github.com/felipehfs
           <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
       </body>
   </html>
-  """
+  ```
