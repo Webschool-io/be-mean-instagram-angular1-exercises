@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="class01">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Class 01 - Exercício 02</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Contato</h2>
+        <form action="contato.js" method="post">
+            <label for="nome">
+                <input class="" type="text" placeholder="Nome" data-ng-model="nome">
+            </label>
+            <label for="email">
+                <input class="" type="text" placeholder="E-mail" data-ng-model="email">
+            </label>
+            <label for="msg">
+                <textarea class="" type="text" placeholder="Mensagem" data-ng-model="msg">
+                </textarea>
+            </label>
+        </form>
+    </div>
+
+    <div class="container">
+      <h2 class="">Visualização</h2>
+      <p><strong>Nome:</strong> {{ nome }}</p>
+      <p><strong>E-mail:</strong> {{ email }}</p>
+      <p><strong>Mensagem:</strong> {{ msg }}</p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script>
+    angular.module('class01', []);
+</script>
+</body>
+</html>
