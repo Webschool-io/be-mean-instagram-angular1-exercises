@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-ng-app="class02">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Class 02</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col m6">
+                <h2>Transferência</h2>
+                <form action="" method="post">
+                    <label for="hora">Horas:</label>
+                    <input type="time" data-ng-model="hora" name="hora">
+                    <label for="nome-completo">Nome completo</label>
+                    <input type="text" name="nome-completo" data-ng-model="nomeCompleto">
+                    <label for="nome-usuario">Nome de usuário</label>
+                    <input type="text" name="nome-usuario" data-ng-model="nomeUsuario">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" data-ng-model="email">
+                    <label for="idade">Idade</label>
+                    <input type="text" name="idade" data-ng-model="idade">
+                    <label for="conta">Conta pra transferencia</label>
+                    <input type="text" name="conta" data-ng-model="conta">
+                    <label for="valor">Valor</label>
+                    <input type="number" name="valor" data-ng-model="valor">
+                    <button class="waves-effect waves-light btn-large">Transferir</button>
+                </form>
+            </div>
+            <div class="col m6">
+                <h2>Comprovante</h2>
+                <h3>{{hora | saudacao}}</h3>
+                <p>Nome completo: {{nomeCompleto | uppercase}} </p>
+                <p>Nome de usuario: {{nomeUsuario | lowercase}} </p>
+                <p>E-mail: {{email}}</p>
+                <p>Idade: {{idade | idade}}</p>
+                <p>Conta: {{conta | limitTo:6}}</p>
+                <p>Valor transferência: {{valor | number:2 | currency:"R$"}}</p>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script>
+        angular.module('class02', [])
+        .filter("idade", function() {
+          return function (age) {
+            if (age) {
+              if (age >= 18) return age + " - Usuário maior de idade, transferência aprovada";
+              if (age < 18 ) return age + " - Usuário menor de idade, transferência pendente";
+              else return "idade inválida";
+          }
+      }
+  })
+        .filter("saudacao", function() {
+          return function(text) {
+            var hora = text.getHours();
+            if(hora >= 0 && hora <= 12)
+               return "Bom dia.";
+           else if(hora >= 12 && hora <= 18)
+              return "Boa tarde.";
+          else if(hora >= 18 && hora <= 23)
+              return "Boa noite.";
+      }
+  });
+
+</script>
+</body>
+</html>
