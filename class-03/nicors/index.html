@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-ng-app="BeMEAN">
+<head>
+    <meta charset="UTF-8">
+    <title>Class 03 - Controller</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+</head>
+<body data-ng-controller="UserController as User">
+    <h1>{{ User.titulo }}</h1>
+    <ul>
+        <li data-ng-repeat="user in User.users">
+          {{ user.name }} - {{ user.email }}
+      </li>
+  </ul>
+
+  <div data-ng-controller="CursoController as Curso">
+    <h2>{{ Curso.titulo }}</h2>
+    <ul>
+      <li data-ng-repeat="curso in Curso.cursos">
+        {{ curso.name }} - {{ curso.teacher }}
+    </li>
+</ul>
+</div>
+<div data-ng-controller="ProfessorController as Professor">
+    <h2>{{ Professor.titulo }}</h2>
+    <ul>
+      <li data-ng-repeat="Professor in Professor.professores">
+        {{ Professor.name }} - {{ Professor.age | idade }}
+    </li>
+</ul>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script>
+    angular.module('BeMEAN', [])
+    .controller('UserController', UserController)
+    .controller('CursoController', CursoController)
+    .controller('ProfessorController', ProfessorController)
+    .filter("idade", function() {
+          return function (age) {
+            if (age) {
+              if (age >= 18) return age + " - Usuário maior de idade";
+              if (age < 18 ) return age + " - Usuário menor de idade";
+              else return "idade inválida";
+          }
+      }
+  });
+    function UserController() {
+      var vm = this;
+      vm.titulo = "Be MEAN - Usuários";
+      vm.users = [
+        {name: 'Suissa', email: 'suissera@manoveio.com'}
+      , {name: 'Nicolas', email: 'nicolas.serrato@outlook.com'}
+      , {name: 'Carlos', email: 'carlos.gabriel@outlook.com'}
+      ];
+  }
+  function CursoController() {
+      var vm = this;
+      vm.titulo = "Be MEAN - Cursos";
+      vm.cursos = [
+        {name: 'Be MEAN', teacher: 'Suissa'}
+      , {name: 'Learning Machine', teacher: 'Ivan Gustavo'}
+      , {name: 'Laravel', teacher: 'Michael Douglas'}
+      ];
+  }
+  function ProfessorController() {
+    var vm = this;
+    vm.tirulo = "Be MEAN - Professores";
+    vm.professores = [
+      {name: 'Jean Carlo Nascimento', age: 30}
+    , {name: 'Amanda Vilela', age:23}
+    , {name: 'Itacir Ferreira Pompeu', age: 30}
+    ];
+  }
+</script>
+</body>
+</html>
