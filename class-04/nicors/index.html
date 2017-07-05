@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-ng-app="BeMEAN">
+<head>
+  <meta charset="UTF-8">
+  <title>Class 04 - Read/Retrieve</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+</head>
+<body>
+  <div class="container" data-ng-controller="UserController as User">
+    <h1>{{ User.titulo }}</h1>
+    <span data-ng-init="predicateUser= 'id'; reverse= true;"></span>
+    <label>Busca:<input data-ng-model="searchUser"></label>
+    <table>
+      <thead>
+        <tr>
+          <th data-ng-repeat="(key,value) in User.users[0]">{{ key }} </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="user in User.users | orderBy:predicateUser:reverse | filter:searchUser">
+          <td data-ng-repeat="(key,value) in user">{{ value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container" data-ng-controller="CursoController as Curso">
+    <h1>{{ Curso.titulo }}</h1>
+    <span data-ng-init="predicateCurso='id';"></span>
+    <label>Busca:<input data-ng-model="searchCurso"></label>
+    <table>
+      <thead>
+        <tr>
+          <th data-ng-repeat="(key, value) in Curso.cursos[0]">{{ key }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="curso in Curso.cursos | orderBy:predicateCurso | filter:searchCurso">
+          <td data-ng-repeat="(key, value) in curso">{{value}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container" data-ng-controller="ProfessorController as Professor">
+    <h1>{{ Professor.titulo }}</h1>
+    <span data-ng-init="predicateProfessor='id';"></span>
+    <label>Busca:<input data-ng-model="searchProfessor"></label>
+    <table>
+      <thead>
+        <tr>
+          <th data-ng-repeat="(key, value) in Professor.professores[0]">{{ key }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="professor in Professor.professores | orderBy:predicateProfessor | filter:searchProfessor">
+          <td data-ng-repeat="(key, value) in professor">{{value}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script>
+    angular.module('BeMEAN', [])
+    .controller('UserController', UserController)
+    .controller('CursoController', CursoController)
+    .controller('ProfessorController', ProfessorController)
+    .filter("idade", function() {
+      return function (age) {
+        if (age) {
+          if (age >= 18) return age + " - Usuário maior de idade";
+          if (age < 18 ) return age + " - Usuário menor de idade";
+          else return "idade inválida";
+        }
+      }
+    });
+    function UserController() {
+      var vm = this;
+      vm.titulo = "Be MEAN - Usuários";
+      vm.users = [
+      {name: 'Suissa', email: 'suissera@manoveio.com', id:1}
+      , {name: 'Nicolas', email: 'nicolas.serrato@outlook.com', id: 2}
+      , {name: 'Carlos', email: 'carlos.gabriel@outlook.com', id: 3}
+      ];
+    }
+    function CursoController() {
+      var vm = this;
+      vm.titulo = "Be MEAN - Cursos";
+      vm.cursos = [
+      {name: 'Be MEAN', teacher: 'Suissa', id: 1}
+      , {name: 'Learning Machine', teacher: 'Ivan Gustavo', id: 2}
+      , {name: 'Laravel', teacher: 'Michael Douglas', id: 3}
+      ];
+    }
+    function ProfessorController() {
+      var vm = this;
+      vm.titulo = "Be MEAN - Professores";
+      vm.professores = [
+      {name: 'Jean Carlo Nascimento', age: 30, id: 1}
+      , {name: 'Amanda Vilela', age:23, id: 2}
+      , {name: 'Itacir Ferreira Pompeu', age: 30, id: 3}
+      ];
+    }
+  </script>
+</body>
+</html>
