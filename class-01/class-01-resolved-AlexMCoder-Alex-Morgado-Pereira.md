@@ -1,19 +1,19 @@
 # 1 - Explique qual é a definição de MVC, MVVM e MVP
 
 ## MVC:
-	### Model: Responsável pela leitura e escrita dos dados. Podemos realizarManipulação dos dados e validações;
-	### View: Exibição dos dados por meio de HTML ou XML;
-	### Controller: Defini os controladores da página que será mostrado pelo usuário.
+### Model: Responsável pela leitura e escrita dos dados. Podemos realizarManipulação dos dados e validações;
+### View: Exibição dos dados por meio de HTML ou XML;
+### Controller: Defini os controladores da página que será mostrado pelo usuário.
 
 ## MVP:
-	### Model: Responsável pela leitura e escrita dos dados. Podemos realizarManipulação dos dados e validações;
-	### View: Exibição dos dados por meio de HTML ou XML;
-	### Presenter: Ela atua na View e no Model.
+### Model: Responsável pela leitura e escrita dos dados. Podemos realizarManipulação dos dados e validações;
+### View: Exibição dos dados por meio de HTML ou XML;
+### Presenter: Ela atua na View e no Model.
 
-### MVVM:
-	### Model: Responsável pela leitura e escrita dos dados. Podemos realizarManipulação dos dados e validações;
-	### View: Exibição dos dados por meio de HTML ou XML;
-	### ViewModel: Sua responsabilidade é disponibilizar para View uma lógica de apresentação
+## MVVM:
+### Model: Responsável pela leitura e escrita dos dados. Podemos realizarManipulação dos dados e validações;
+### View: Exibição dos dados por meio de HTML ou XML;
+### ViewModel: Sua responsabilidade é disponibilizar para View uma lógica de apresentação
 
 # 2 - Crie uma aplicação com um nome e um form onde os dados colocados neles sejam mostrados logo abaixo, formatados
 
