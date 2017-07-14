@@ -6,9 +6,9 @@
 * Controller: Defini os controladores da página que será mostrado pelo usuário.
 
 ## MVP:
-### Model: Responsável pela leitura e escrita dos dados. Podemos realizarManipulação dos dados e validações;
-### View: Exibição dos dados por meio de HTML ou XML;
-### Presenter: Ela atua na View e no Model.
+* Model: Responsável pela leitura e escrita dos dados. Podemos realizarManipulação dos dados e validações;
+* View: Exibição dos dados por meio de HTML ou XML;
+* Presenter: Ela atua na View e no Model.
 
 ## MVVM:
 * Model: Responsável pela leitura e escrita dos dados. Podemos realizarManipulação dos dados e validações;
