@@ -1,4 +1,4 @@
-# AngularJS 1.5.x - Aula 01 - Exercício  
+# AngularJS 1.5.x - Aula 02 - Exercício  
 **user:** [MagnumCortez](https://github.com/MagnumCortez)  
 **autor:** Magnum cortez
 
