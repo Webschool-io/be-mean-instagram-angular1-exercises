@@ -1,4 +1,4 @@
-# AngularJS - Aula 11 - Exercício
+# AngularJS - Aula 12 - Exercício
 **user:** [MagnumCortez](https://github.com/MagnumCortez)  
 
 **autor:** Magnum cortez
